@@ -1,3 +1,6 @@
+/**
+ * Repräsentiert einen Privatkunden.
+ */
 public class Privatkunde extends Kunde{
 
     private String vorname;
