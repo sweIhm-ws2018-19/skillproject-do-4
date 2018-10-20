@@ -21,5 +21,4 @@ public class Konto {
     public void einzahlen(GeldBetrag eingzahlterBetrag){
 
     }
-
 }
