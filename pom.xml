@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>alexa-skills-kit-samples</groupId>
-  <artifactId>colorpicker</artifactId>
+  <artifactId>alibi</artifactId>
   <packaging>jar</packaging>
   <version>1.0</version>
-  <name>colorpicker</name>
+  <name>alibi</name>
   <url>http://developer.amazon.com/ask</url>
   <licenses>
     <license>
@@ -27,30 +27,57 @@
     <url>https://github.com/amzn/alexa-skills-kit-java.git</url>
   </scm>
 
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+
+
   <dependencies>
     <dependency>
       <groupId>com.amazon.alexa</groupId>
       <artifactId>ask-sdk</artifactId>
       <version>2.5.5</version>
     </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+      <dependency>
+          <groupId>org.assertj</groupId>
+          <artifactId>assertj-core</artifactId>
+          <version>3.9.1</version>
+          <scope>test</scope>
+      </dependency>
   </dependencies>
 
   <build>
     <sourceDirectory>src</sourceDirectory>
-    <pluginManagement>
+    <testSourceDirectory>test</testSourceDirectory>
       <plugins>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.7.0</version>
+            <groupId> org.apache.maven.plugins </groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.6</version>
+          <executions>
+            <execution>
+              <id>make-assembly</id>
+              <phase>package</phase>
+              <goals>
+                <goal>single</goal>
+              </goals>
+            </execution>
+          </executions>
           <configuration>
-            <source>1.8</source>
-            <target>1.8</target>
-            <forceJavacCompilerUse>true</forceJavacCompilerUse>
+            <descriptorRefs>
+              <descriptorRef>jar-with-dependencies</descriptorRef>
+            </descriptorRefs>
           </configuration>
         </plugin>
       </plugins>
-    </pluginManagement>
   </build>
   
 </project>
