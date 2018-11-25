@@ -13,12 +13,12 @@ public abstract class AlibiProvider {
     /**
      * Constructor.
      */
-    public AlibiProvider(){}
+    public AlibiProvider() { }
 
     /**
      * Provides alibis according to the search criteria.
-     * @param searchCriteria  the search criteria.
+     * @param criteria  the search criteria.
      * @return alibis found by this instance.
      */
-    public abstract Collection<Alibi> provideAlibi(final Collection<String> searchCriteria);
+    public abstract Collection<Alibi> provideAlibi(Collection<String> criteria);
 }

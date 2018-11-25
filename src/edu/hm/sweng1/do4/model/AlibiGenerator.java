@@ -1,6 +1,10 @@
 package edu.hm.sweng1.do4.model;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
+import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Class which generates alibis.
@@ -25,7 +29,7 @@ public class AlibiGenerator {
      * @param start  start of the alibi timespan.
      * @param end    end of the alibi timespan.
      */
-    public AlibiGenerator(String start, String end){
+    public AlibiGenerator(final String start, final String end) {
         providers = new ArrayList<>();
         filters = new ArrayList<>();
 
@@ -38,9 +42,10 @@ public class AlibiGenerator {
      * Extracts the search criteria from the raw request.
      * Currently a mock dummy implementation.
      * @param rawRequest  the request as accepted by the generator.
-     * @return  a selection of terms (phrases and words) that will be given to the providers..
+     * @return  a selection of terms (phrases and words) that will
+     * be given to the providers.
      */
-    public Collection<String> extractCriteriaFrom(final String rawRequest){
+    public Collection<String> extractCriteriaFrom(final String rawRequest) {
         List<String> criteria = new ArrayList<>();
         criteria.add(rawRequest);
         return criteria;
@@ -52,7 +57,7 @@ public class AlibiGenerator {
      * @param alibis   the filtered alibis.
      * @return a response as given by the generator.
      */
-    public String composeResponse(Collection<Alibi> alibis){
+    public String composeResponse(final Collection<Alibi> alibis) {
         String response = "";
         ArrayList<Alibi> list = new ArrayList<>(alibis);
         response = list.get(new Random().nextInt(list.size())).getActivity();
@@ -64,16 +69,16 @@ public class AlibiGenerator {
      * @param request  the request as accepted by the generator.
      * @return  the response as given by the generator.
      */
-    public String generateAlibi(final String request){
+    public String generateAlibi(final String request) {
         final Collection<String> criteria = extractCriteriaFrom(request);
         Collection<Alibi> allAlibis = new TreeSet<>();
         Collection<Alibi> allValidAlibis = new TreeSet<>();
 
-        for(AlibiProvider provider : providers){
-            allAlibis.addAll(provider.provideAlibi(request));
+        for (AlibiProvider provider : providers) {
+            allAlibis.addAll(provider.provideAlibi(criteria));
         }
 
-        for(AlibiFilter filter : filters){
+        for (AlibiFilter filter : filters) {
             allValidAlibis.addAll(filter.filter(allAlibis));
         }
         return composeResponse(allValidAlibis);

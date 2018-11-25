@@ -10,7 +10,7 @@ import java.util.Date;
  * @version 1.0.0
  * 19.11.2018
  */
-public class TimeFilter extends AlibiFilter {
+public final class TimeFilter extends AlibiFilter {
 
     /**
      * The default format expected of a date.
@@ -34,30 +34,32 @@ public class TimeFilter extends AlibiFilter {
 
     /**
      * Constructor.
-     * @param start  start.
-     * @param end    end.
+     * @param newStart  start.
+     * @param newEnd    end.
      */
-    public TimeFilter(String start, String end) {
-        this.start = start;
-        this.end = end;
+    public TimeFilter(final String newStart, final String newEnd) {
+        this.start = newStart;
+        this.end = newEnd;
         this.format = DEFAULT_DATE_FORMAT;
     }
 
     /**
      * Constructor.
-     * @param start  start.
-     * @param end    end.
-     * @param format    format.
+     * @param newStart  start.
+     * @param newEnd    end.
+     * @param newFormat    format.
      */
-    public TimeFilter(String start, String end, String format) {
-        this.start = start;
-        this.end = end;
-        this.format = format;
+    public TimeFilter(final String newStart,
+                      final String newEnd, final String newFormat) {
+        this.start = newStart;
+        this.end = newEnd;
+        this.format = newFormat;
     }
 
     @Override
     public boolean filter(final Alibi alibi) {
-        return compare(alibi.getStart(), start) <= 0 || compare(end, alibi.getEnd()) >= 0;
+        return compare(alibi.getStart(), start) <= 0
+                || compare(end, alibi.getEnd()) >= 0;
     }
 
     /**
@@ -68,12 +70,12 @@ public class TimeFilter extends AlibiFilter {
      *         0, if firstDate is equal to secondDate.
      *         1, if firstDate is after secondDate.
      */
-    public int compare(String firstDate, String secondDate){
+    public int compare(final String firstDate, final String secondDate) {
         try {
             Date first = new SimpleDateFormat(format).parse(firstDate);
             Date second = new SimpleDateFormat(format).parse(secondDate);
             return first.compareTo(second);
-        } catch(ParseException pex){
+        } catch (ParseException pex) {
             throw new RuntimeException(pex.getMessage());
         }
     }

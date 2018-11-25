@@ -14,7 +14,7 @@ import java.util.TreeSet;
  * @version 1.0.0
  * 19.11.2018
  */
-public class CSVProvider extends AlibiProvider {
+public final class CSVProvider extends AlibiProvider {
 
     /**
      * Default CSV source.
@@ -29,23 +29,24 @@ public class CSVProvider extends AlibiProvider {
     /**
      * Constructor.
      */
-    public CSVProvider(){
+    public CSVProvider() {
         this.source = DEFAULT_SOURCE;
     }
 
     /**
      * Constructor.
-     * @param source  source.
+     * @param newSource  source.
      */
-    public CSVProvider(final String source){
-        this.source = source;
+    public CSVProvider(final String newSource) {
+        this.source = newSource;
     }
 
     @Override
-    public Collection<Alibi> provideAlibi(Collection<String> searchCriteria) {
+    public Collection<Alibi> provideAlibi(final Collection<String> criteria) {
         Collection<Alibi> alibis = new TreeSet<>();
-        try{
-            Files.readAllLines(Paths.get(source)).forEach(line -> alibis.add(convertToAlibi(line)));
+        try {
+            Files.readAllLines(Paths.get(source))
+                    .forEach(line -> alibis.add(convertToAlibi(line)));
         } catch (IOException iox) {
             iox.printStackTrace();
         }
@@ -57,9 +58,9 @@ public class CSVProvider extends AlibiProvider {
      * @param line  the line to be converted.
      * @return an alibi based on line.
      */
-    private Alibi convertToAlibi(String line) {
+    private Alibi convertToAlibi(final String line) {
         String[] parts = line.split(Alibi.TO_STRING_SEPARATOR);
-        if(parts.length != Alibi.NUMBER_OF_ATTRIBUTES){
+        if (parts.length != Alibi.NUMBER_OF_ATTRIBUTES) {
             throw new RuntimeException("CSV format failed");
         }
         return new Alibi(parts);

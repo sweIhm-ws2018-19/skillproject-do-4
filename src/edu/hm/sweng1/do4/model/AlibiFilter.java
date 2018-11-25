@@ -1,6 +1,5 @@
 package edu.hm.sweng1.do4.model;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.TreeSet;
 
@@ -15,14 +14,14 @@ public abstract class AlibiFilter {
     /**
      * Constructor.
      */
-    public AlibiFilter(){}
+    public AlibiFilter() { }
 
     /**
      * Filters alibis according to the corresponding restraints.
      * @param alibis  the alibis to be filtered.
      * @return the filtered alibis.
      */
-    public Collection<Alibi> filter(final Collection<Alibi> alibis){
+    public Collection<Alibi> filter(final Collection<Alibi> alibis) {
         Collection<Alibi> result = new TreeSet<>();
         alibis.stream().filter(this::filter).forEach(result::add);
         return result;

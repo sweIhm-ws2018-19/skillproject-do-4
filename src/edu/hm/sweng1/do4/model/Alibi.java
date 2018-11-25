@@ -8,8 +8,16 @@ import java.text.ParseException;
  * @version 1.0.0
  * 19.11.2018
  */
-public class Alibi implements Comparable {
+public final class Alibi implements Comparable {
+
+    /**
+     * The number of attributes.
+     */
     public static final int NUMBER_OF_ATTRIBUTES = 7;
+
+    /**
+     * Separator used in toString()-method.
+     */
     public static final String TO_STRING_SEPARATOR = "]-[";
 
     /**
@@ -28,12 +36,14 @@ public class Alibi implements Comparable {
     private final String location;
 
     /**
-     * The social environment of the subject which should support the alibi's authenticity..
+     * The social environment of the subject which
+     * should support the alibi's authenticity.
      */
     private final String environment;
 
     /**
-     * The alleged activity of the subject during the timespan covered by the alibi.
+     * The alleged activity of the subject during the
+     * timespan covered by the alibi.
      */
     private final String activity;
 
@@ -49,35 +59,42 @@ public class Alibi implements Comparable {
 
     /**
      * Constructor.
-     * @param target       initial target.
-     * @param subject      initial subject.
-     * @param location     initial location.
-     * @param environment  initial environment.
-     * @param activity     initial activity.
-     * @param start        initial start.
-     * @param end          initial end.
+     * @param newTarget       initial target.
+     * @param newSubject      initial subject.
+     * @param newLocation     initial location.
+     * @param newEnvironment  initial environment.
+     * @param newActivity     initial activity.
+     * @param newStart        initial start.
+     * @param newEnd          initial end.
+     * @throws ParseException if there is a parse error with the dates.
      */
-    public Alibi(String target, String subject, String location, String environment, String activity, String start, String end) throws ParseException {
-        this.target = target;
-        this.subject = subject;
-        this.location = location;
-        this.environment = environment;
-        this.activity = activity;
-        this.start = start;
-        this.end = end;
+    public Alibi(final String newTarget,
+                 final String newSubject,
+                 final String newLocation,
+                 final String newEnvironment,
+                 final String newActivity,
+                 final String newStart,
+                 final String newEnd) throws ParseException {
+        this.target = newTarget;
+        this.subject = newSubject;
+        this.location = newLocation;
+        this.environment = newEnvironment;
+        this.activity = newActivity;
+        this.start = newStart;
+        this.end = newEnd;
     }
     /**
      * Constructor.
      * @param args  initial values.
      */
-    public Alibi(String... args) {
+    public Alibi(final String... args) {
         this.target = args[0];
         this.subject = args[1];
         this.location = args[2];
-        this.environment = args[3];
-        this.activity = args[4];
-        this.start = args[5];
-        this.end = args[6];
+        this.environment = args[2 + 1];
+        this.activity = args[2 + 2];
+        this.start = args[2 + 2 + 1];
+        this.end = args[2 + 2 + 2];
     }
 
     /**
@@ -137,11 +154,20 @@ public class Alibi implements Comparable {
     }
 
     @Override
-    public String toString(){
-        return target + TO_STRING_SEPARATOR + subject + TO_STRING_SEPARATOR + location + TO_STRING_SEPARATOR + environment + TO_STRING_SEPARATOR + activity + TO_STRING_SEPARATOR + start + TO_STRING_SEPARATOR + end;
+    public String toString() {
+        return target + TO_STRING_SEPARATOR
+                + subject + TO_STRING_SEPARATOR
+                + location + TO_STRING_SEPARATOR
+                + environment + TO_STRING_SEPARATOR
+                + activity + TO_STRING_SEPARATOR
+                + start + TO_STRING_SEPARATOR + end;
     }
     @Override
-    public int compareTo(Object o) {
-        return o != null ? this.toString().compareTo(o.toString()) : 1;
+    public int compareTo(final Object o) {
+        if (o != null) {
+            return 1;
+        } else {
+            return this.toString().compareTo(o.toString());
+        }
     }
 }
