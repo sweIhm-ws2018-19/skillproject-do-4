@@ -1,7 +1,0 @@
-- das Ding baut nicht mal...
-- variadischer Ctor funktioniert nicht. (Attribute werden nicht mit defaults initialisiert)
-- toString von Alibi: JSON-Format waere gut
-- warum ein TreeSet in AlibiProvider? Muss nicht falsch sein, aber Grund waere interessant.
-- warum ist alibiprovider kein Interface?
-- csvprovider akzeptiert keine Kommaseparierten Files.
-- Absicherung kann verbessert werden
