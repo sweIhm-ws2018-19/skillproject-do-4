@@ -8,16 +8,19 @@ import com.amazon.ask.alibi.handlers.CancelandStopIntentHandler;
 import com.amazon.ask.alibi.handlers.AlibiIntentHandler;
 import com.amazon.ask.alibi.handlers.HelpIntentHandler;
 import com.amazon.ask.alibi.handlers.LaunchRequestHandler;
+import com.amazon.ask.alibi.handlers.SessionEndedRequestHandler;
 
 public class AlibiStreamHandler extends SkillStreamHandler {
 	
+	@SuppressWarnings("unchecked")
 	private static Skill getSkill() {
 		return Skills.standard()
 				.addRequestHandlers(
 						new CancelandStopIntentHandler(),
 						new AlibiIntentHandler(),
 						new HelpIntentHandler(),
-						new LaunchRequestHandler())
+						new LaunchRequestHandler(),
+						new SessionEndedRequestHandler())
 				.build();
 	}
 	

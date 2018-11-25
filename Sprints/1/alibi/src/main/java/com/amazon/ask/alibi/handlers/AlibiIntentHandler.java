@@ -13,7 +13,7 @@ public class AlibiIntentHandler implements RequestHandler {
 	@Override
 	public boolean canHandle(HandlerInput input) {
 		
-		return input.matches(Predicates.intentName("AlibiIntent"));
+		return input.matches(Predicates.intentName("erstelleAlibi"));
 	}
 
 	@Override
@@ -21,7 +21,7 @@ public class AlibiIntentHandler implements RequestHandler {
 		String speechText = "Sag mir das Datum deiner Erinnerung";
 		return input.getResponseBuilder()
 				.withSpeech(speechText)
-				.withSimpleCard("GetAlibi", speechText)
+				.withSimpleCard("Alibi", speechText)
 				.build();
 	}
 	

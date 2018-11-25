@@ -74,11 +74,19 @@ public class AlibiGenerator {
         Collection<Alibi> allAlibis = new TreeSet<>();
         Collection<Alibi> allValidAlibis = new TreeSet<>();
 
+<<<<<<< HEAD
         for (AlibiProvider provider : providers) {
             allAlibis.addAll(provider.provideAlibi(criteria));
         }
 
         for (AlibiFilter filter : filters) {
+=======
+        for (AlibiProvider provider : providers){
+            allAlibis.addAll(provider.provideAlibi(request));
+        }
+
+        for (AlibiFilter filter : filters){
+>>>>>>> 70cbb4652263e194747a99e8ac0a59ef121ed185
             allValidAlibis.addAll(filter.filter(allAlibis));
         }
         return composeResponse(allValidAlibis);
