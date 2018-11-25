@@ -19,7 +19,7 @@ public class HelpIntentHandler implements RequestHandler {
 		String speechText = "Ich erstelle dir ein Alibi. Gib Datum und Zeitpunkt an.";
 		return input.getResponseBuilder()
 				.withSpeech(speechText)
-				.withSimpleCard("Help", speechText)
+				.withSimpleCard("Alibi", speechText)
 				.withReprompt(speechText)
 				.build();
 		
