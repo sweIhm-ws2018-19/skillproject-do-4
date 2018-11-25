@@ -22,7 +22,7 @@ public class LaunchRequestHandler implements RequestHandler {
 		String speechText = "Willkommen bei deiner Persönlichen Erinnerungshilfe.";
 		return input.getResponseBuilder()
 				.withSpeech(speechText)
-				.withSimpleCard("Wilkommen", speechText)
+				.withSimpleCard("Alibi", speechText)
 				.withReprompt(speechText)
 				.build();
 	}
