@@ -77,12 +77,14 @@ public class AlibiTest {
 
     @Test
     public void testToString() {
-        assertEquals("[teacher]-[whatthehell]-[school]-[noone]-[studying]-[morning]-[never]", alibi.toString());
-    }
-
-    @Test
-    public void testCompareToNull() {
-        assertEquals(1, alibi.compareTo(null));
+        assertEquals(
+                "teacher" + Alibi.TO_STRING_SEPARATOR +
+                "whatthehell" + Alibi.TO_STRING_SEPARATOR +
+                "school" + Alibi.TO_STRING_SEPARATOR +
+                "noone" + Alibi.TO_STRING_SEPARATOR +
+                "studying" + Alibi.TO_STRING_SEPARATOR +
+                "morning" + Alibi.TO_STRING_SEPARATOR +
+                "never", alibi.toString());
     }
 
     @Test
