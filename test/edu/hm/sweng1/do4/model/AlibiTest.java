@@ -26,18 +26,13 @@ public class AlibiTest {
     @Test
     public void testCtor() throws ParseException {
         Alibi alibi = new Alibi(
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null);
-    }
-
-    @Test
-    public void testVariadicCtor() {
-        Alibi alibi = new Alibi(null);
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "");
     }
 
     @Test
@@ -89,6 +84,7 @@ public class AlibiTest {
 
     @Test
     public void testCompareToSelf() {
-        assertEquals(0, alibi.compareTo(alibi));
+        assertEquals("comparing an alibi to itself, expected 0, got " + alibi.compareTo(alibi),
+                0, alibi.compareTo(alibi));
     }
 }

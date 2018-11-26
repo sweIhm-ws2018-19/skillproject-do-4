@@ -18,7 +18,7 @@ public final class Alibi implements Comparable {
     /**
      * Separator used in toString()-method.
      */
-    public static final String TO_STRING_SEPARATOR = "]-[";
+    public static final String TO_STRING_SEPARATOR = ":-:";
 
     /**
      * The target who is supposed to believe the alibi.
@@ -164,7 +164,7 @@ public final class Alibi implements Comparable {
     }
     @Override
     public int compareTo(final Object o) {
-        if (o != null) {
+        if (o == null) {
             return 1;
         } else {
             return this.toString().compareTo(o.toString());
