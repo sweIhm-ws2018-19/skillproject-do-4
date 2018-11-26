@@ -19,7 +19,7 @@ public class LaunchRequestHandler implements RequestHandler {
 
 	@Override
 	public Optional<Response> handle(HandlerInput input) {
-		String speechText = "Willkommen bei deiner Persönlichen Erinnerungshilfe.";
+		String speechText = "Willkommen bei deiner Persönlichen Erinnerungshilfe. Was kann ich heute für dich tun?";
 		return input.getResponseBuilder()
 				.withSpeech(speechText)
 				.withSimpleCard("Alibi", speechText)
