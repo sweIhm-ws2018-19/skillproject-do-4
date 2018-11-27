@@ -18,7 +18,7 @@ public class AlibiIntentHandler implements RequestHandler {
 
 	@Override
 	public Optional<Response> handle(HandlerInput input) {
-		String speechText = "Sag mir das Datum deiner Erinnerung";
+		String speechText = "Los gehts! Sag mir das Datum deiner Erinnerung";
 		return input.getResponseBuilder()
 				.withSpeech(speechText)
 				.withSimpleCard("Alibi", speechText)
