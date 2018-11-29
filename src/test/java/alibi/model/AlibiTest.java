@@ -1,6 +1,6 @@
 package alibi.model;
 
-import main.java.alibi.model.Alibi;
+import alibi.model.Alibi;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

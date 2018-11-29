@@ -1,6 +1,6 @@
 package alibi.model;
 
-import main.java.alibi.model.TimeFilter;
+import alibi.model.TimeFilter;
 import org.junit.Assert;
 import org.junit.Test;
 

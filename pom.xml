@@ -34,7 +34,7 @@
 
 
 
-  <dependencies>
+  <dependencies> 
     <dependency>
       <groupId>com.amazon.alexa</groupId>
       <artifactId>ask-sdk</artifactId>
