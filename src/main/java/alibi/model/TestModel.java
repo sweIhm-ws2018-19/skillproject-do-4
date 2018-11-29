@@ -6,7 +6,7 @@ package alibi.model;
  * @version 1.0.0
  * 29.11.2018
  */
-public class TestModel {
+public final class TestModel {
 
     /**
      * Private constructor.

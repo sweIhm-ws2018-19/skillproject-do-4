@@ -17,7 +17,7 @@ public class AlibiGenerator {
     /**
      * Response prefix.
      */
-    public static final String RESPONSE_PREFIX = "Du hast ";
+    private static final String RESPONSE_PREFIX = "Du hast ";
     /**
      * The sources of the alibi data.
      */
@@ -51,7 +51,7 @@ public class AlibiGenerator {
      * @return  a selection of terms (phrases and words) that will
      * be given to the providers.
      */
-    public Collection<String> extractCriteriaFrom(final String rawRequest) {
+    private Collection<String> extractCriteriaFrom(final String rawRequest) {
         List<String> criteria = new ArrayList<>();
         criteria.add(rawRequest);
         return criteria;
@@ -63,7 +63,7 @@ public class AlibiGenerator {
      * @param alibis   the filtered alibis.
      * @return a response as given by the generator.
      */
-    public String composeResponse(final Collection<Alibi> alibis) {
+    private String composeResponse(final Collection<Alibi> alibis) {
         String response = RESPONSE_PREFIX;
         ArrayList<Alibi> list = new ArrayList<>(alibis);
         response += list.get(new Random().nextInt(list.size())).getActivity();
