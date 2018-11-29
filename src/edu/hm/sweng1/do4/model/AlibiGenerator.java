@@ -15,6 +15,10 @@ import java.util.Random;
 public class AlibiGenerator {
 
     /**
+     * Response prefix.
+     */
+    public static final String RESPONSE_PREFIX = "Du hast ";
+    /**
      * The sources of the alibi data.
      */
     private final Collection<AlibiProvider> providers;
@@ -33,9 +37,11 @@ public class AlibiGenerator {
         providers = new ArrayList<>();
         filters = new ArrayList<>();
 
-        providers.add(new CSVProvider());
+//        providers.add(new CSVProvider());
+        providers.add(new JokerProvider());
 
-        filters.add(new TimeFilter(start, end));
+//        filters.add(new TimeFilter(start, end));
+        filters.add(new UniversalFilter());
     }
 
     /**
@@ -58,9 +64,9 @@ public class AlibiGenerator {
      * @return a response as given by the generator.
      */
     public String composeResponse(final Collection<Alibi> alibis) {
-        String response = "";
+        String response = RESPONSE_PREFIX;
         ArrayList<Alibi> list = new ArrayList<>(alibis);
-        response = list.get(new Random().nextInt(list.size())).getActivity();
+        response += list.get(new Random().nextInt(list.size())).getActivity();
         return response;
     }
 
