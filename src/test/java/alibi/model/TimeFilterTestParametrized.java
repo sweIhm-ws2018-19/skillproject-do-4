@@ -1,5 +1,7 @@
-package edu.hm.sweng1.do4.model;
+package alibi.model;
 
+import main.java.alibi.model.Alibi;
+import main.java.alibi.model.TimeFilter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;

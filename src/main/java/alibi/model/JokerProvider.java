@@ -1,6 +1,4 @@
-package edu.hm.sweng1.do4.model;
-
-import com.sun.corba.se.spi.ior.TaggedProfileTemplate;
+package main.java.alibi.model;
 
 import java.text.ParseException;
 import java.util.Collection;

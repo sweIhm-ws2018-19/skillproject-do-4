@@ -1,4 +1,4 @@
-package edu.hm.sweng1.do4.model;
+package main.java.alibi.model;
 
 /**
  * Test for model.

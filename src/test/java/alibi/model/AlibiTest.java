@@ -1,5 +1,7 @@
-package edu.hm.sweng1.do4.model;
+package alibi.model;
 
+import main.java.alibi.model.Alibi;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -37,42 +39,42 @@ public class AlibiTest {
 
     @Test
     public void testGetTarget() {
-        assertEquals("teacher", alibi.getTarget());
+        Assert.assertEquals("teacher", alibi.getTarget());
     }
 
     @Test
     public void testGetSubject() {
-        assertEquals("whatthehell", alibi.getSubject());
+        Assert.assertEquals("whatthehell", alibi.getSubject());
     }
 
     @Test
     public void testGetLocation() {
-        assertEquals("school", alibi.getLocation());
+        Assert.assertEquals("school", alibi.getLocation());
     }
 
     @Test
     public void testGetEnvironment() {
-        assertEquals("noone", alibi.getEnvironment());
+        Assert.assertEquals("noone", alibi.getEnvironment());
     }
 
     @Test
     public void testGetActivity() {
-        assertEquals("studying", alibi.getActivity());
+        Assert.assertEquals("studying", alibi.getActivity());
     }
 
     @Test
     public void testGetStart() {
-        assertEquals("morning", alibi.getStart());
+        Assert.assertEquals("morning", alibi.getStart());
     }
 
     @Test
     public void testGetEnd() {
-        assertEquals("never", alibi.getEnd());
+        Assert.assertEquals("never", alibi.getEnd());
     }
 
     @Test
     public void testToString() {
-        assertEquals(
+        Assert.assertEquals(
                 "teacher" + Alibi.TO_STRING_SEPARATOR +
                 "whatthehell" + Alibi.TO_STRING_SEPARATOR +
                 "school" + Alibi.TO_STRING_SEPARATOR +
@@ -84,7 +86,7 @@ public class AlibiTest {
 
     @Test
     public void testCompareToSelf() {
-        assertEquals("comparing an alibi to itself, expected 0, got " + alibi.compareTo(alibi),
+        Assert.assertEquals("comparing an alibi to itself, expected 0, got " + alibi.compareTo(alibi),
                 0, alibi.compareTo(alibi));
     }
 }
