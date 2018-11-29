@@ -1,14 +1,13 @@
-package alibi.model;
 
-import main.java.alibi.model.Alibi;
-import main.java.alibi.model.CSVProvider;
-import org.junit.Assert;
-import org.junit.Test;
+//package alibi.model;
 
-import java.io.File;
-import java.util.Collection;
+//import org.junit.Assert;
+//import org.junit.Test;
 
-public class CsvProviderTest {
+//import java.io.File;
+//import java.util.Collection;
+
+/*public class CsvProviderTest {
 
     @Test
     public void testProvideAlibi() {
@@ -18,4 +17,4 @@ public class CsvProviderTest {
         CSVProvider provider = new CSVProvider(file.getAbsolutePath());
         Collection<Alibi> coll = provider.provideAlibi(null);
     }
-}
+}*/

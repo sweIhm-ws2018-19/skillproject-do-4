@@ -1,4 +1,4 @@
-package main.java.alibi.model;
+package alibi.model;
 
 import java.io.IOException;
 

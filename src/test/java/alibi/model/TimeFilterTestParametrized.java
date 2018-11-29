@@ -1,7 +1,7 @@
 package alibi.model;
 
-import main.java.alibi.model.Alibi;
-import main.java.alibi.model.TimeFilter;
+import alibi.model.Alibi;
+import alibi.model.TimeFilter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;

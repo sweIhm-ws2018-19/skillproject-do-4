@@ -1,4 +1,4 @@
-package main.java.alibi.model;
+package alibi.model;
 
 import java.util.Collection;
 import java.util.List;
