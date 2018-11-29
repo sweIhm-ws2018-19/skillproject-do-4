@@ -1,5 +1,0 @@
-- Sprintziel: Realisierung der grundsätzlichen Funktionalität der Abfrage "Alexa was habe ich von...bis...gemacht?"
-
-- User Stories:
-	- Der Benutzer soll Alexa mit "Alexa Alibi" starten können.
-	- Der Benutzer soll mit 2 Zeitangaben einen Zeitraum definieren können, wodurch Alexa ein mögliches Alibi zurückgibt.
