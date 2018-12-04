@@ -35,15 +35,15 @@ public class AlibiIntentHandler implements RequestHandler {
 		Intent intent = intentRequest.getIntent();
 		Map<String, Slot> slots = intent.getSlots();
 
-		// Get the color slot from the list of slots.
+		// Get the date slot from the list of slots.
 		Slot dateSlot = slots.get(DATE_SLOT);
 
 		String speechText, repromptText;
 		boolean isAskResponse = false;
 
-		// Check for favorite color and create output to user.
+		// Check for date and create output to user.
 		if (dateSlot != null) {
-			// Store the user's favorite color in the Session and create response.
+			// Store the user's date in the Session and create response.
 			String date = dateSlot.getValue();
 			input.getAttributesManager().setSessionAttributes(Collections.singletonMap(DATE_KEY, date));
 
