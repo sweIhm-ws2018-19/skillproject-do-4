@@ -58,8 +58,7 @@ public final class TimeFilter extends AlibiFilter {
 
     @Override
     public boolean filter(final Alibi alibi) {
-        return compare(alibi.getStart(), start) <= 0
-                || compare(end, alibi.getEnd()) >= 0;
+        return (compare(alibi.getStart(), start) <= 0 && compare(start, alibi.getEnd()) < 0) || (compare(end, alibi.getEnd()) <= 0 && compare(alibi.getStart, end) < 0);
     }
 
     /**
