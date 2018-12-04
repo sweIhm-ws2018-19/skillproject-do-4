@@ -9,9 +9,11 @@ import java.text.ParseException;
 
 public class AlibiTest {
 
-    final Alibi alibi;
+    private Alibi alibi;
 
-    AlibiTest() throws ParseException {
+
+    @BeforeEach
+    public void setup() throws ParseException {
         alibi = new Alibi(
                 "teacher",
                 "whatthehell",
