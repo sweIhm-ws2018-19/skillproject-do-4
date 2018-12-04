@@ -54,9 +54,9 @@ public class AlibiIntentHandler implements RequestHandler {
 
 		} else {
 			// Render an error since we don't know what the users favorite color is.
-			speechText = "Ich kenne Deine Lieblingsfarbe nicht. Bitte versuche es noch einmal.";
+			speechText = "Ich kenne dein Datum nicht. Bitte versuche es noch einmal.";
 			repromptText =
-					"Ich weiss nicht welches Deine Lieblingsfarbe ist. Sag mir Deine Lieblingsfarbe. Sage zum Beispiel: ich mag blau.";
+					"Ich weiss wirklich nicht was dein Datum ist.";
 			isAskResponse = true;
 		}
 
