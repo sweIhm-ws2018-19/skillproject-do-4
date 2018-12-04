@@ -57,11 +57,12 @@ public final class CSVProvider extends AlibiProvider {
      * Converts a CSV line into an alibi.
      * @param line  the line to be converted.
      * @return an alibi based on line.
+	 * @throws IOException  if the CSV format is incorrect.
      */
-    private Alibi convertToAlibi(final String line) {
+    private Alibi convertToAlibi(final String line) throws IOException {
         String[] parts = line.split(Alibi.TO_STRING_SEPARATOR);
         if (parts.length != Alibi.NUMBER_OF_ATTRIBUTES) {
-            throw new RuntimeException("CSV format failed");
+            throw new IOException("CSV format failed");
         }
         return new Alibi(parts);
     }
