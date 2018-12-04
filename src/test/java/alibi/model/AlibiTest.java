@@ -1,19 +1,17 @@
 package alibi.model;
 
-import alibi.model.Alibi;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import java.text.ParseException;
 
 public class AlibiTest {
 
-    Alibi alibi = null;
+    static Alibi alibi = null;
 
-    @Before
-    public void initialize() throws ParseException {
+    @BeforeAll
+    public static void setup() throws ParseException {
         alibi = new Alibi(
                 "teacher",
                 "whatthehell",
@@ -38,43 +36,29 @@ public class AlibiTest {
     }
 
     @Test
-    public void testGetTarget() {
-        Assert.assertEquals("teacher", alibi.getTarget());
-    }
+    public void testGetTarget() { assertEquals("teacher", alibi.getTarget()); }
 
     @Test
-    public void testGetSubject() {
-        Assert.assertEquals("whatthehell", alibi.getSubject());
-    }
+    public void testGetSubject() { assertEquals("whatthehell", alibi.getSubject()); }
 
     @Test
-    public void testGetLocation() {
-        Assert.assertEquals("school", alibi.getLocation());
-    }
+    public void testGetLocation() { assertEquals("school", alibi.getLocation()); }
 
     @Test
-    public void testGetEnvironment() {
-        Assert.assertEquals("noone", alibi.getEnvironment());
-    }
+    public void testGetEnvironment() { assertEquals("noone", alibi.getEnvironment()); }
 
     @Test
-    public void testGetActivity() {
-        Assert.assertEquals("studying", alibi.getActivity());
-    }
+    public void testGetActivity() { assertEquals("studying", alibi.getActivity()); }
 
     @Test
-    public void testGetStart() {
-        Assert.assertEquals("morning", alibi.getStart());
-    }
+    public void testGetStart() { assertEquals("morning", alibi.getStart()); }
 
     @Test
-    public void testGetEnd() {
-        Assert.assertEquals("never", alibi.getEnd());
-    }
+    public void testGetEnd() { assertEquals("never", alibi.getEnd()); }
 
     @Test
     public void testToString() {
-        Assert.assertEquals(
+        assertEquals(
                 "teacher" + Alibi.TO_STRING_SEPARATOR +
                 "whatthehell" + Alibi.TO_STRING_SEPARATOR +
                 "school" + Alibi.TO_STRING_SEPARATOR +
@@ -86,7 +70,24 @@ public class AlibiTest {
 
     @Test
     public void testCompareToSelf() {
-        Assert.assertEquals("comparing an alibi to itself, expected 0, got " + alibi.compareTo(alibi),
-                0, alibi.compareTo(alibi));
+        assertEquals(0, alibi.compareTo(alibi));
+    }
+
+
+    @Test
+    public void testCompareToNull() {
+        assertEquals(1, alibi.compareTo(null));
+    }
+
+    @Test
+    public void testCtorVariadic() {
+        Alibi alibi = new Alibi(new String[]{"foo", "bar", "baz", "foobar", "foobaz", "foofoo", "foofoofoo"});
+        assertEquals("foo", alibi.getTarget());
+        assertEquals("bar", alibi.getSubject());
+        assertEquals("baz", alibi.getLocation());
+        assertEquals("foobar", alibi.getEnvironment());
+        assertEquals("foobaz", alibi.getActivity());
+        assertEquals("foofoo", alibi.getStart());
+        assertEquals("foofoofoo", alibi.getEnd());
     }
 }
