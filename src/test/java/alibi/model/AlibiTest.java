@@ -2,18 +2,17 @@ package alibi.model;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.text.ParseException;
 
 public class AlibiTest {
 
-    private Alibi alibi;
+    private static Alibi alibi;
 
 
-    @BeforeEach
-    public void setup() throws ParseException {
+    @BeforeAll
+    public static void setup() throws ParseException {
         alibi = new Alibi(
                 "teacher",
                 "whatthehell",
