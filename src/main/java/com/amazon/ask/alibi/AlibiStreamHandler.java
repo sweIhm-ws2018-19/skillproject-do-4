@@ -13,7 +13,7 @@ public class AlibiStreamHandler extends SkillStreamHandler {
 	private static Skill getSkill() {
 		return Skills.standard()
 				.addRequestHandlers(
-						new CancelandStopIntentHandler(),
+						new StopIntentHandler(),
 						new AlibiIntentHandler(),
 						new HelpIntentHandler(),
 						new LaunchRequestHandler(),

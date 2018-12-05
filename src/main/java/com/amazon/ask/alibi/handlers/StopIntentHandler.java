@@ -10,18 +10,18 @@ import static com.amazon.ask.request.Predicates.intentName;
 
 import java.util.Optional;
 
-public class CancelandStopIntentHandler implements RequestHandler {
+public class StopIntentHandler implements RequestHandler {
 
 	@Override
 	public boolean canHandle(HandlerInput input) {
-		return input.matches(intentName("AMAZON.StopIntent").or(intentName("AMAZON.CancelIntent")));
+		return input.matches(intentName("AMAZON.StopIntent"));
 	}
 
 	@Override
 	public Optional<Response> handle(HandlerInput input) {
 		return input.getResponseBuilder()
-				.withSpeech("Auf Wiedersehen")
-				.withSimpleCard("Alibi", "Auf Wiedersehen")
+				.withSpeech("Auf Wiedersehen!")
+				.withSimpleCard("Alibi", "Auf Wiedersehen!")
 				.build();
 	}
 	
