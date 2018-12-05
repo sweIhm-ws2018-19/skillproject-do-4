@@ -52,7 +52,7 @@ public class AlibiFilterTest {
 
     @Test
     public void testFilterSpecificEnd() {
-        AlibiFilter testFilter =  new LambdaAlibiFilter((Alibi alibi) -> alibi.getEnd() == "00.00 00.00.0020");
+        AlibiFilter testFilter =  new LambdaAlibiFilter((Alibi alibi) -> alibi.getEnd().equals("00.00 00.00.0020"));
         Collection<Alibi> filteredAlibis = testFilter.filter(defaultCollection);
         assertEquals(1, filteredAlibis.size(),
                 "filtered alibis from alibisource.csv looling for \"00.00 00.00.0020\" as " +
