@@ -12,7 +12,7 @@ import java.util.Random;
  * @version 1.0.0
  * 19.11.2018
  */
-public class AlibiGenerator {
+public final class AlibiGenerator {
 
     /**
      * Response prefix.
@@ -29,7 +29,7 @@ public class AlibiGenerator {
     private final Collection<AlibiFilter> filters;
 
     /**
-     * Constructor.
+     * Constructor for use in productive version.
      * @param start  start of the alibi timespan.providers
      * @param end    end of the alibi timespan.
      */
@@ -42,6 +42,16 @@ public class AlibiGenerator {
 
 //        filters.add(new TimeFilter(start, end));
         filters.add(new UniversalFilter());
+    }
+
+    /**
+     * Constructor for use during testing.
+     * @param providers  initial providers.
+     * @param filters    initial filters.
+     */
+    AlibiGenerator(final Collection<AlibiProvider> providers, Collection<AlibiFilter> filters) {
+        this.providers = providers;
+        this.filters = filters;
     }
 
     /**
