@@ -30,11 +30,6 @@ public class WhatsMyAlibiIntentHandlerTest {
     }
 
     @Test
-    public void testCanHandle() {
-        MockHandlerInputFactory.createCanHandleTest(new WhatsMyAlibiIntentHandler()).run();
-    }
-
-    @Test
     public void testHandleSucces() {
         String date = "19.8.1998";
         Optional<Response> output = new WhatsMyAlibiIntentHandler().handle(getMockHandlerInput(date));

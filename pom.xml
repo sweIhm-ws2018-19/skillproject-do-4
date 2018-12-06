@@ -61,6 +61,11 @@
       <version>2.23.4</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>name.falgout.jeffrey.testing.junit5</groupId>
+      <artifactId>mockito-extension</artifactId>
+      <version>1.1.0</version>
+    </dependency>
   </dependencies>
 
   <build>
