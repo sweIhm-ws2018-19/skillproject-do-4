@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 
 import java.util.Collection;
 import java.util.TreeSet;
+import java.util.logging.Logger;
 
 /**
  * Class for providing alibis from a CSV file.
