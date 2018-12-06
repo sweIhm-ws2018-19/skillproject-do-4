@@ -11,6 +11,9 @@ public class WhatsMyAlibiIntentHandler implements RequestHandler {
     public static final String DATE_KEY = "DATE";
     public static final String DATE_SLOT = "Datum";
 
+    public static final String LOC_KEY = "LOCATION";
+    public static final String LOC_SLOT = "Ort";
+
 
     @Override
     public boolean canHandle(HandlerInput input) {

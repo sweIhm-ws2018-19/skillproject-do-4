@@ -19,6 +19,9 @@ import java.util.Optional;
 import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.DATE_KEY;
 import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.DATE_SLOT;
 
+import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.LOC_KEY;
+import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.LOC_SLOT;
+
 
 public class AlibiIntentHandler implements RequestHandler {
 
@@ -35,9 +38,14 @@ public class AlibiIntentHandler implements RequestHandler {
 		IntentRequest intentRequest = (IntentRequest) request;
 		Intent intent = intentRequest.getIntent();
 		Map<String, Slot> slots = intent.getSlots();
+		Map<String ,Slot> slots2 = intent.getSlots();
+
 
 		// Get the date slot from the list of slots.
 		Slot dateSlot = slots.get(DATE_SLOT);
+
+		// Get the loc slot from the list of slots.
+		Slot locSlot = slots2.get(LOC_SLOT);
 
 		String speechText, repromptText;
 		boolean isAskResponse = false;
@@ -48,11 +56,15 @@ public class AlibiIntentHandler implements RequestHandler {
 			String date = dateSlot.getValue();
 			input.getAttributesManager().setSessionAttributes(Collections.singletonMap(DATE_KEY, date));
 
+			//String location = locSlot.getValue();
+			String location = "München";
+			input.getAttributesManager().setSessionAttributes(Collections.singletonMap(LOC_KEY, location));
+
 			AlibiGenerator generator = new AlibiGenerator(date,date);
 
-			speechText = generator.generateAlibi("Moos");
+			speechText = generator.generateAlibi(location);
 
-			repromptText = generator.generateAlibi("Moos");
+			repromptText = generator.generateAlibi(location);
 
 		} else {
 			// Render an error since we don't know what the users favorite color is.
