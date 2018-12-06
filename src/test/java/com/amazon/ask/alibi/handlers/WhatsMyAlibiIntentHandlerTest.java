@@ -31,8 +31,7 @@ public class WhatsMyAlibiIntentHandlerTest {
 
     @Test
     public void testCanHandle() {
-        assertTrue(new WhatsMyAlibiIntentHandler().canHandle(HandlerInputFactory.createCanHandleInputHandler(true)));
-        assertFalse(new WhatsMyAlibiIntentHandler().canHandle(HandlerInputFactory.createCanHandleInputHandler(false)));
+        MockHandlerInputFactory.createCanHandleTest(new WhatsMyAlibiIntentHandler()).run();
     }
 
     @Test
