@@ -38,7 +38,6 @@ public class AlibiIntentHandlerTest {
         MockHandlerInputFactory.createCanHandleTest(new AlibiIntentHandler()).run();
     }
 
-    @Test
     public void testHandleNull() {
         Map<String, Slot> map = new HashMap<>();
         map.put(WhatsMyAlibiIntentHandler.DATE_KEY, null);
@@ -50,7 +49,6 @@ public class AlibiIntentHandlerTest {
         assertTrue(response.get().toString().contains("Ich kenne dein Datum nicht"));
     }
 
-    @Test
     public void testHandleNonNullDate() {
         String date = "14.23.1938";
         Map<String, Slot> map = new HashMap<>();
