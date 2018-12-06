@@ -30,6 +30,7 @@ public final class AlibiGenerator {
 
     /**
      * Constructor for use in productive version.
+     * String output = new AlibiGener
      * @param start  start of the alibi timespan.providers
      * @param end    end of the alibi timespan.
      */
