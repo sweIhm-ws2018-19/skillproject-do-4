@@ -3,6 +3,7 @@ package com.amazon.ask.alibi.handlers;
 
 
 
+import alibi.model.AlibiGenerator;
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 
@@ -47,10 +48,11 @@ public class AlibiIntentHandler implements RequestHandler {
 			String date = dateSlot.getValue();
 			input.getAttributesManager().setSessionAttributes(Collections.singletonMap(DATE_KEY, date));
 
-			speechText =
-					String.format("Dein Datum ist %s. Du kannst mich jetzt nach deinem Datum fragen.", date);
-			repromptText =
-					"Frage nach deinem Datum";
+			AlibiGenerator generator = new AlibiGenerator(date,date);
+
+			speechText = generator.generateAlibi("Moos");
+
+			repromptText = generator.generateAlibi("Moos");
 
 		} else {
 			// Render an error since we don't know what the users favorite color is.
