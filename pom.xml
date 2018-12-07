@@ -82,7 +82,7 @@
   <build>
     <testResources>
       <testResource>
-        <directory>testresources</directory>
+        <directory>src/test/testresources</directory>
       </testResource>
     </testResources>
     <plugins>
