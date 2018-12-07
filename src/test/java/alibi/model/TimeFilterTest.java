@@ -38,7 +38,7 @@ public class TimeFilterTest {
     @CsvSource({
             BEGIN + "," + END + "," + BEGIN + "," + END + "," + "true",
             BEGIN + "," + BEGIN + "," + BEGIN + "," + BEGIN + "," + "true",
-            END + "," + AFTER + "," + BEGIN + "," + END + "," + "false",
+            END + "," + AFTER + "," + BEGIN + "," + END + "," + "true",
             BEFORE + "," + BEFORE + "," + BEGIN + "," + END + "," + "false",
             BEGIN + "," + AFTER + "," + BEGIN + "," + END + "," + "true"
     })

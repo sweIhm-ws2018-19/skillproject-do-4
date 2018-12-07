@@ -12,7 +12,7 @@ public class AlibiTest {
 
 
     @BeforeAll
-    public static void setup() throws ParseException {
+    public static void setup() {
         alibi = new Alibi(
                 "teacher",
                 "whatthehell",
@@ -25,7 +25,7 @@ public class AlibiTest {
     }
 
     @Test
-    public void testCtor() throws ParseException {
+    public void testCtor() {
         Alibi alibi = new Alibi(
                 "",
                 "",
@@ -34,6 +34,16 @@ public class AlibiTest {
                 "",
                 "",
                 "");
+    }
+
+    @Test
+    public void testArrayCtorFail() {
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> new Alibi(new String[]{}));
+    }
+
+    @Test
+    public void testArrayCtorSuccess() {
+        assertDoesNotThrow(() -> new Alibi(new String[]{"foo", "bar", "baz", "foo", "foo", "foo", "foo"}));
     }
 
     @Test

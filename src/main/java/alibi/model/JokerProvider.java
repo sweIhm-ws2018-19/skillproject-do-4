@@ -14,13 +14,9 @@ public class JokerProvider implements AlibiProvider {
     @Override
     public final Collection<Alibi> provideAlibi(final Collection<String> criteria) {
         Collection<Alibi> result = new TreeSet<>();
-        try {
-            result.add(new Alibi("", "", "", "", "Date mit Alexa gehabt.", "", ""));
-            result.add(new Alibi("", "", "", "", "für Softwareentwicklung 3 gelernt.", "", ""));
-            result.add(new Alibi("", "", "", "", "mit 40 Grad Fieber im Bett gelegen.", "", ""));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        result.add(new Alibi("", "", "", "", "Date mit Alexa gehabt.", "", ""));
+        result.add(new Alibi("", "", "", "", "für Softwareentwicklung 3 gelernt.", "", ""));
+        result.add(new Alibi("", "", "", "", "mit 40 Grad Fieber im Bett gelegen.", "", ""));
         return result;
     }
 }

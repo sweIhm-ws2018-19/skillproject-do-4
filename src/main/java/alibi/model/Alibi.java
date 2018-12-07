@@ -66,7 +66,6 @@ public final class Alibi implements Comparable {
      * @param newActivity     initial activity.
      * @param newStart        initial start.
      * @param newEnd          initial end.
-     * @throws ParseException if there is a parse error with the dates.
      */
     public Alibi(final String newTarget,
                  final String newSubject,
@@ -74,7 +73,7 @@ public final class Alibi implements Comparable {
                  final String newEnvironment,
                  final String newActivity,
                  final String newStart,
-                 final String newEnd) throws ParseException {
+                 final String newEnd) {
         this.target = newTarget;
         this.subject = newSubject;
         this.location = newLocation;
