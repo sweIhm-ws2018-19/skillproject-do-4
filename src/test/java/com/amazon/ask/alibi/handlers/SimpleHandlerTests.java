@@ -1,6 +1,8 @@
 package com.amazon.ask.alibi.handlers;
 
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
+import name.falgout.jeffrey.testing.junit.mockito.MockitoExtension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -8,6 +10,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
+@ExtendWith(MockitoExtension.class)
 public class SimpleHandlerTests {
     @ParameterizedTest
     @MethodSource("createHandlers")

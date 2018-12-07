@@ -17,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 public class AlibiIntentHandlerTest {
     private HandlerInput createHandlerInput(Map<String, Slot> intents) {
         HandlerInput handlerInput = mock(HandlerInput.class);
@@ -38,6 +39,7 @@ public class AlibiIntentHandlerTest {
         MockHandlerInputFactory.createCanHandleTest(new AlibiIntentHandler()).run();
     }
 
+    @Test
     public void testHandleNull() {
         Map<String, Slot> map = new HashMap<>();
         map.put(WhatsMyAlibiIntentHandler.DATE_KEY, null);
@@ -49,6 +51,7 @@ public class AlibiIntentHandlerTest {
         assertTrue(response.get().toString().contains("Ich kenne dein Datum nicht"));
     }
 
+    @Test
     public void testHandleNonNullDate() {
         String date = "14.23.1938";
         Map<String, Slot> map = new HashMap<>();

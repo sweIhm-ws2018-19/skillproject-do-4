@@ -11,15 +11,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class TimeFilterTest {
-    private static final String BEGIN = "00.00 00.00.0010";
-    private static final String END = "00.00 00.00.0021";
-    private static final String BEFORE = "00.00 00.00.0009";
-    private static final String AFTER = "00.00 00.00.0022";
+    private static final String BEGIN = "00.00 01.01.0010";
+    private static final String END = "00.00 01.01.0021";
+    private static final String BEFORE = "00.00 01.01.0009";
+    private static final String AFTER = "00.00 01.01.0022";
 
     @Test
     public void testCompareToYear() {
-        String begin = "00.00 00.00.0000";
-        String end = "00.00 00.00.0001";
+        String begin = "00.00 01.01.0000";
+        String end = "00.00 01.01.0001";
         TimeFilter filter = new TimeFilter(begin, end);
         assertEquals(-1, filter.compare(begin, end));
         assertEquals(1, filter.compare(end, begin));
@@ -28,8 +28,8 @@ public class TimeFilterTest {
 
     @Test
     public void testCompareToCombination() {
-        String begin = "01.00 00.02.0000";
-        String end = "10.00 00.00.0001";
+        String begin = "01.00 01.03.0000";
+        String end = "10.00 01.01.0001";
         TimeFilter filter = new TimeFilter(begin, end);
         assertEquals(-1, filter.compare(begin, end));
     }
