@@ -1,10 +1,6 @@
 package alibi.model;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.TreeSet;
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Class which generates alibis.
@@ -17,7 +13,7 @@ public final class AlibiGenerator {
     /**
      * Response prefix.
      */
-    private static final String RESPONSE_PREFIX = "Du hast ";
+    private static final String RESPONSE_PREFIX = "Du ";
     /**
      * The sources of the alibi data.
      */
@@ -47,12 +43,13 @@ public final class AlibiGenerator {
 
     /**
      * Constructor for use during testing.
-     * @param providers  initial providers.
-     * @param filters    initial filters.
+     * @param newProviders  initial providers.
+     * @param newFilters    initial filters.
      */
-    AlibiGenerator(final Collection<AlibiProvider> providers, Collection<AlibiFilter> filters) {
-        this.providers = providers;
-        this.filters = filters;
+    AlibiGenerator(final Collection<AlibiProvider> newProviders,
+                   final Collection<AlibiFilter> newFilters) {
+        this.providers = newProviders;
+        this.filters = newFilters;
     }
 
     /**
@@ -63,9 +60,7 @@ public final class AlibiGenerator {
      * be given to the providers.
      */
     private Collection<String> extractCriteriaFrom(final String rawRequest) {
-        List<String> criteria = new ArrayList<>();
-        criteria.add(rawRequest);
-        return criteria;
+        return Arrays.asList(rawRequest.split(", "));
     }
 
     /**
