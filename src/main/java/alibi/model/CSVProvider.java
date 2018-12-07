@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  * @version 1.0.0
  * 19.11.2018
  */
-public final class CSVProvider extends AlibiProvider {
+public final class CSVProvider implements AlibiProvider {
 
     /**
      * Default CSV source.

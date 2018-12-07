@@ -10,7 +10,7 @@ import java.util.TreeSet;
  * @version 1.0.0
  * 29.11.2018
  */
-public class JokerProvider extends AlibiProvider {
+public class JokerProvider implements AlibiProvider {
     @Override
     public final Collection<Alibi> provideAlibi(final Collection<String> criteria) {
         Collection<Alibi> result = new TreeSet<>();

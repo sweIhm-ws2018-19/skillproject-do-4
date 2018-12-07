@@ -8,17 +8,13 @@ import java.util.Collection;
  * @version 1.0.0
  * 19.11.2018
  */
-public abstract class AlibiProvider {
-
-    /**
-     * Constructor.
-     */
-    public AlibiProvider() { }
+public interface AlibiProvider {
 
     /**
      * Provides alibis according to the search criteria.
-     * @param criteria  the search criteria.
+     *
+     * @param criteria the search criteria.
      * @return alibis found by this instance.
      */
-    public abstract Collection<Alibi> provideAlibi(Collection<String> criteria);
+    Collection<Alibi> provideAlibi(Collection<String> criteria);
 }

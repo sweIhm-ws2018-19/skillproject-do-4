@@ -87,7 +87,11 @@ public final class Alibi implements Comparable {
      * Constructor.
      * @param args  initial values.
      */
-    public Alibi(final String... args) {
+    @SuppressWarnings("SingleStatementInBlock")
+    public Alibi(final String[] args) {
+        if (args.length != NUMBER_OF_ATTRIBUTES) {
+            throw new ArrayIndexOutOfBoundsException("alibi needs " + NUMBER_OF_ATTRIBUTES + "attributes");
+        }
         this.target = args[0];
         this.subject = args[1];
         this.location = args[2];
