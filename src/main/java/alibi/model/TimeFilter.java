@@ -15,7 +15,7 @@ public final class TimeFilter extends AlibiFilter {
     /**
      * The default format expected of a date.
      */
-    public static final String DEFAULT_DATE_FORMAT = "HH.mm dd.MM.YYYY";
+    public static final String DEFAULT_DATE_FORMAT = "HH.mm dd.MM.yyyy";
 
     /**
      * The start date of the filter.
@@ -48,7 +48,7 @@ public final class TimeFilter extends AlibiFilter {
         final boolean frontExcess = compare(alibi.getStart(), start) <= 0;
         final boolean frontOverlap = compare(start, alibi.getEnd()) <= 0;
         final boolean backExcess = compare(end, alibi.getEnd()) <= 0;
-        final boolean backOverlap = compare(alibi.getStart(), end) <= 0;
+        final boolean backOverlap  = compare(alibi.getStart(), end) <= 0;
         return (frontExcess && frontOverlap) || (backExcess && backOverlap);
     }
 
