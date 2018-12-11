@@ -22,7 +22,7 @@ public final class LocationProvider implements AlibiProvider {
     /**
      * Means of mapping a location to alibi.
      */
-    public static final Map<String, Collection<Alibi>> LOCATION_TO_ALIBI;
+    private static final Map<String, Collection<Alibi>> LOCATION_TO_ALIBI;
 
     static {
         LOCATION_TO_ALIBI = new HashMap<>();
