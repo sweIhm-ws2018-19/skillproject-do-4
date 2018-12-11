@@ -1,5 +1,6 @@
 package alibi.model;
 
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -27,7 +28,7 @@ public final class CSVProvider implements AlibiProvider {
     /**
      * Logger.
      */
-    public static final Logger LOGGER = LogManager.getLogger(CSVProvider.class);
+    public static final Logger LOGGER;
 
     /**
      * I/O error message.
@@ -45,6 +46,11 @@ public final class CSVProvider implements AlibiProvider {
      * CSV source.
      */
     private final String source;
+
+    static {
+        BasicConfigurator.configure();
+        LOGGER = LogManager.getLogger(CSVProvider.class);
+    }
 
     /**
      * Constructor.
