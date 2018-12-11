@@ -65,8 +65,10 @@ public final class CSVProvider implements AlibiProvider {
     public Collection<Alibi> provideAlibi(final Collection<String> criteria) {
         Collection<Alibi> alibis = new TreeSet<>();
         try {
-            Files.readAllLines(Paths.get(source))
-                    .forEach(line -> alibis.add(convertToAlibi(line)));
+            Files.lines(Paths.get(source))
+                    .map(this::convertToAlibi)
+                    .filter(alibi -> alibi == null)
+                    .forEach(alibis::add);
         } catch (IOException iox) {
             LOGGER.error(IO_ERROR_MESSAGE, iox);
         }
