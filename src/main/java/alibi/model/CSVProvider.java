@@ -45,18 +45,12 @@ public final class CSVProvider implements AlibiProvider {
     @Override
     public Collection<Alibi> provideAlibi(final Collection<String> criteria) {
         Collection<Alibi> alibis = new TreeSet<>();
-        Stream<String> stream = null;
-        try {
-            stream = Files.lines(Paths.get(source));
+        try (Stream<String> stream = Files.lines(Paths.get(source))) {
             stream.map(this::convertToAlibi)
                     .filter(alibi -> alibi != null)
                     .forEach(alibis::add);
         } catch (IOException iox) {
             iox.printStackTrace();
-        } finally {
-            if (stream != null) {
-                stream.findAny();
-            }
         }
         return alibis;
     }
