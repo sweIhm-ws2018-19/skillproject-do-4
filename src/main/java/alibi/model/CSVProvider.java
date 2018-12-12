@@ -47,7 +47,7 @@ public final class CSVProvider implements AlibiProvider {
         try {
             Files.lines(Paths.get(source))
                     .map(this::convertToAlibi)
-                    .filter(alibi -> alibi == null)
+                    .filter(alibi -> alibi != null)
                     .forEach(alibis::add);
         } catch (IOException iox) {
             iox.printStackTrace();

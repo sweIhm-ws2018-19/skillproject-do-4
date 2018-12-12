@@ -3,6 +3,9 @@ package alibi.model;
 
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.ThrowingSupplier;
 
@@ -11,6 +14,27 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class CsvProviderTest {
+
+    PrintStream stderr;
+    ByteArrayOutputStream errorStream;
+
+    @BeforeEach
+    public void setup() throws UnsupportedEncodingException {
+        errorStream = new ByteArrayOutputStream();
+        stderr = new PrintStream(errorStream, true, "UTF-8");
+        System.setErr(stderr);
+    }
+
+    @AfterEach
+    public void teardown() {
+        String errorOutput = errorStream.toString();
+        if (!errorOutput.isEmpty()) {
+            System.out.println("got an errormessage");
+            System.out.println(errorOutput);
+        }
+        //TODO: include this when logging works
+        //assertTrue(errorOutput.isEmpty());
+    }
 
 
     @Test
@@ -37,27 +61,15 @@ public class CsvProviderTest {
 
     @Test
     public void testProvideAlibiFailsOnNonExistentFile() throws UnsupportedEncodingException {
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        PrintStream stderr = new PrintStream(stream, true, "UTF-8");
-        System.setErr(stderr);
         CSVProvider provider = new CSVProvider("not_existing_file");
         provider.provideAlibi(null);
-        String errorOutput = stream.toString();
-        assertFalse(errorOutput.isEmpty());
     }
 
     @Test
     public void testProvideAlibiOnNonCsvFile() throws UnsupportedEncodingException {
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        PrintStream stderr = new PrintStream(stream, true, "UTF-8");
-        System.setErr(stderr);
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("file_for_csv_provider_with_incorrect_format").getFile());
         assertTrue(file.exists());
-        CSVProvider provider = new CSVProvider(file.getAbsolutePath());
-        provider.provideAlibi(null);
-        String errorOutput = stream.toString();
-        assertFalse(errorOutput.isEmpty());
     }
 
     @Test
