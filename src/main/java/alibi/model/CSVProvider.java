@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 
 import java.util.Collection;
 import java.util.TreeSet;
+import java.util.stream.Stream;
 
 /**
  * Class for providing alibis from a CSV file.
@@ -44,13 +45,18 @@ public final class CSVProvider implements AlibiProvider {
     @Override
     public Collection<Alibi> provideAlibi(final Collection<String> criteria) {
         Collection<Alibi> alibis = new TreeSet<>();
+        Stream<String> stream = null;
         try {
-            Files.lines(Paths.get(source))
-                    .map(this::convertToAlibi)
+            stream = Files.lines(Paths.get(source));
+            stream.map(this::convertToAlibi)
                     .filter(alibi -> alibi != null)
                     .forEach(alibis::add);
         } catch (IOException iox) {
             iox.printStackTrace();
+        } finally {
+            if (stream != null) {
+                stream.findAny();
+            }
         }
         return alibis;
     }
