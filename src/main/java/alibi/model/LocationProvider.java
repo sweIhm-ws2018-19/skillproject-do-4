@@ -71,6 +71,7 @@ public final class LocationProvider implements AlibiProvider {
         activities.add("bist auf das Atomium geklettert.");
         activities.add("hast dich von der Schokoladenfabrik"
                 + " begeistern lassen.");
+        addToMap(activities, location);
     }
 
     /**
