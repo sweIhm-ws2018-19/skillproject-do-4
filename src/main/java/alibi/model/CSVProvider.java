@@ -1,8 +1,8 @@
 package alibi.model;
 
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.BasicConfigurator; //compilation failure
+//import org.apache.log4j.LogManager;
+//import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
@@ -28,7 +28,7 @@ public final class CSVProvider implements AlibiProvider {
     /**
      * Logger.
      */
-    public static final Logger LOGGER;
+//    public static final Logger LOGGER;
 
     /**
      * I/O error message.
@@ -47,10 +47,10 @@ public final class CSVProvider implements AlibiProvider {
      */
     private final String source;
 
-    static {
-        BasicConfigurator.configure();
-        LOGGER = LogManager.getLogger(CSVProvider.class);
-    }
+//    static {
+//        BasicConfigurator.configure();
+//        LOGGER = LogManager.getLogger(CSVProvider.class);
+//    }
 
     /**
      * Constructor.
@@ -76,7 +76,8 @@ public final class CSVProvider implements AlibiProvider {
                     .filter(alibi -> alibi != null)
                     .forEach(alibis::add);
         } catch (IOException iox) {
-            LOGGER.error(IO_ERROR_MESSAGE, iox);
+//            LOGGER.error(IO_ERROR_MESSAGE, iox);
+            iox.printStackTrace();
         }
         return alibis;
     }
@@ -89,7 +90,7 @@ public final class CSVProvider implements AlibiProvider {
     private Alibi convertToAlibi(final String line) {
         String[] parts = line.split(Alibi.TO_STRING_SEPARATOR);
         if (parts.length != Alibi.NUMBER_OF_ATTRIBUTES) {
-            LOGGER.error(FORMAT_ERROR_MESSAGE);
+//            LOGGER.error(FORMAT_ERROR_MESSAGE);
             return null;
         }
         return new Alibi(parts);
