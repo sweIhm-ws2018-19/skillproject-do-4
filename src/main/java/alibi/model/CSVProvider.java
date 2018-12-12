@@ -1,9 +1,5 @@
 package alibi.model;
 
-//import org.apache.log4j.BasicConfigurator; //compilation failure
-//import org.apache.log4j.LogManager;
-//import org.apache.log4j.Logger;
-
 import java.io.IOException;
 
 import java.nio.file.Files;
@@ -26,31 +22,9 @@ public final class CSVProvider implements AlibiProvider {
     public static final String DEFAULT_SOURCE = "Default CSV source.csv";
 
     /**
-     * Logger.
-     */
-//    public static final Logger LOGGER;
-
-    /**
-     * I/O error message.
-     */
-    private static final String IO_ERROR_MESSAGE =
-            "I/O error occurred in CSVProvider while parsing CSV file";
-
-    /**
-     * Format error message.
-     */
-    private static final String FORMAT_ERROR_MESSAGE =
-            "illegal csv format in CSVProvider";
-
-    /**
      * CSV source.
      */
     private final String source;
-
-//    static {
-//        BasicConfigurator.configure();
-//        LOGGER = LogManager.getLogger(CSVProvider.class);
-//    }
 
     /**
      * Constructor.
@@ -76,7 +50,6 @@ public final class CSVProvider implements AlibiProvider {
                     .filter(alibi -> alibi == null)
                     .forEach(alibis::add);
         } catch (IOException iox) {
-//            LOGGER.error(IO_ERROR_MESSAGE, iox);
             iox.printStackTrace();
         }
         return alibis;
@@ -90,7 +63,6 @@ public final class CSVProvider implements AlibiProvider {
     private Alibi convertToAlibi(final String line) {
         String[] parts = line.split(Alibi.TO_STRING_SEPARATOR);
         if (parts.length != Alibi.NUMBER_OF_ATTRIBUTES) {
-//            LOGGER.error(FORMAT_ERROR_MESSAGE);
             return null;
         }
         return new Alibi(parts);
