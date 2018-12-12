@@ -99,7 +99,7 @@ public final class LocationProvider implements AlibiProvider {
         LOCATION_TO_ALIBI.forEach(
                 (location, alibis) -> addToResult(locationCriteria
                         .contains(location), alibis, result));
-        return null;
+        return result;
     }
 
     /**
