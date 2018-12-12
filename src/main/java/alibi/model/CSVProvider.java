@@ -76,7 +76,8 @@ public final class CSVProvider implements AlibiProvider {
                     .filter(alibi -> alibi == null)
                     .forEach(alibis::add);
         } catch (IOException iox) {
-            LOGGER.error(IO_ERROR_MESSAGE, iox);
+//            LOGGER.error(IO_ERROR_MESSAGE, iox);
+            iox.printStackTrace();
         }
         return alibis;
     }
@@ -89,7 +90,7 @@ public final class CSVProvider implements AlibiProvider {
     private Alibi convertToAlibi(final String line) {
         String[] parts = line.split(Alibi.TO_STRING_SEPARATOR);
         if (parts.length != Alibi.NUMBER_OF_ATTRIBUTES) {
-            LOGGER.error(FORMAT_ERROR_MESSAGE);
+//            LOGGER.error(FORMAT_ERROR_MESSAGE);
             return null;
         }
         return new Alibi(parts);
