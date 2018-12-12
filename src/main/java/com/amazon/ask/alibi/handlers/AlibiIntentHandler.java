@@ -60,6 +60,9 @@ public class AlibiIntentHandler implements RequestHandler {
 			String location = "München";
 			//input.getAttributesManager().setSessionAttributes(Collections.singletonMap(LOC_KEY, location));
 
+			// Alibi Generator works like this:
+			// String output = new AlibiGenerator(startTimeAsString, endTimeAsString).generateAlibi(otherCriteriaAsString);
+
 			AlibiGenerator generator = new AlibiGenerator(date,date);
 
 			speechText = generator.generateAlibi(location);
