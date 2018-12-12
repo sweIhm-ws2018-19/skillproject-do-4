@@ -53,7 +53,7 @@ public class AlibiIntentHandlerTest {
 
     @Test
     public void testHandleNonNullDate() {
-        String date = "14.23.1938";
+        String date = "14.12.1978";
         Map<String, Slot> map = new HashMap<>();
         Slot mockSlot = mock(Slot.class);
         when(mockSlot.getValue()).thenReturn(date);
