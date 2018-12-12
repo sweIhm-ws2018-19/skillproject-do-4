@@ -31,7 +31,7 @@ public final class LocationProvider implements AlibiProvider {
         activities.add("bist ganz oben auf dem Olympiaturm gewesen.");
         activities.add("warst im R-Bau der Hochschule Muenchen"
                 + " in der Lothstrasse.");
-        activities.add("die TU Muenchen in Garching besucht.");
+        activities.add("hast die TU Muenchen in Garching besucht.");
         activities.add("warst im Hauptgebaeude der LMU Muenchen.");
         activities.add("hast eine Mass auf dem Oktoberfest genossen.");
         activities.add("hast den Abdruck des Teufelsfusses"
