@@ -36,6 +36,7 @@ public final class AlibiGenerator {
 
 //        providers.add(new CSVProvider());
         providers.add(new JokerProvider());
+        providers.add(new LocationProvider());
 
 //        filters.add(new TimeFilter(start, end));
         filters.add(new UniversalFilter());
