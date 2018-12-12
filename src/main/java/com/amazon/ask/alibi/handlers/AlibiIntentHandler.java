@@ -57,7 +57,7 @@ public class AlibiIntentHandler implements RequestHandler {
 			input.getAttributesManager().setSessionAttributes(Collections.singletonMap(DATE_KEY, date));
 
 			//String location = locSlot.getValue();
-			String location = "München";
+			String location = "Location: München";
 			//input.getAttributesManager().setSessionAttributes(Collections.singletonMap(LOC_KEY, location));
 
 			// Alibi Generator works like this:
