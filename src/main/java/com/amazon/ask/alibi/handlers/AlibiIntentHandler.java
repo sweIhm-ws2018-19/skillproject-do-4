@@ -12,9 +12,7 @@ import com.amazon.ask.request.Predicates;
 import com.amazon.ask.response.ResponseBuilder;
 
 
-import java.util.Collections;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.DATE_KEY;
 import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.DATE_SLOT;
@@ -25,11 +23,24 @@ import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.LOC_SLOT;
 
 public class AlibiIntentHandler implements RequestHandler {
 
+	private static Random random = new Random();
+
+	/*
+	returns a random location
+	 */
+	private static String getRandomLocation(List<String> locList){
+
+		int index = random.nextInt(locList.size());
+		return locList.get(index);
+	}
+
 
 	@Override
 	public boolean canHandle(HandlerInput input) {
 		return input.matches(Predicates.intentName("erstelleAlibi"));
 	}
+
+
 
 	@Override
 	public Optional<Response> handle(HandlerInput input) {
@@ -39,6 +50,13 @@ public class AlibiIntentHandler implements RequestHandler {
 		Intent intent = intentRequest.getIntent();
 		Map<String, Slot> slots = intent.getSlots();
 		//Map<String ,Slot> slots2 = intent.getSlots();
+
+		//List of Locations
+		List<String> locList = new ArrayList<>();
+		locList.add("Muenchen");
+		locList.add("London");
+		locList.add("Malmo");
+		locList.add("Bruessel");
 
 
 		// Get the date slot from the list of slots.
@@ -57,7 +75,7 @@ public class AlibiIntentHandler implements RequestHandler {
 			input.getAttributesManager().setSessionAttributes(Collections.singletonMap(DATE_KEY, date));
 
 			//String location = locSlot.getValue();
-			String location = "Location: Muenchen";
+			String location = getRandomLocation(locList);
 			//input.getAttributesManager().setSessionAttributes(Collections.singletonMap(LOC_KEY, location));
 
 			// Alibi Generator works like this:
