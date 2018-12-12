@@ -38,14 +38,14 @@ public class AlibiIntentHandler implements RequestHandler {
 		IntentRequest intentRequest = (IntentRequest) request;
 		Intent intent = intentRequest.getIntent();
 		Map<String, Slot> slots = intent.getSlots();
-		Map<String ,Slot> slots2 = intent.getSlots();
+		//Map<String ,Slot> slots2 = intent.getSlots();
 
 
 		// Get the date slot from the list of slots.
 		Slot dateSlot = slots.get(DATE_SLOT);
 
 		// Get the loc slot from the list of slots.
-		Slot locSlot = slots2.get(LOC_SLOT);
+		//Slot locSlot = slots2.get(LOC_SLOT);
 
 		String speechText, repromptText;
 		boolean isAskResponse = false;
@@ -58,7 +58,7 @@ public class AlibiIntentHandler implements RequestHandler {
 
 			//String location = locSlot.getValue();
 			String location = "München";
-			input.getAttributesManager().setSessionAttributes(Collections.singletonMap(LOC_KEY, location));
+			//input.getAttributesManager().setSessionAttributes(Collections.singletonMap(LOC_KEY, location));
 
 			AlibiGenerator generator = new AlibiGenerator(date,date);
 
@@ -67,7 +67,7 @@ public class AlibiIntentHandler implements RequestHandler {
 			repromptText = generator.generateAlibi(location);
 
 		} else {
-			// Render an error since we don't know what the users favorite color is.
+			// Render an error since we don't know what the specific date is.
 			speechText = "Ich kenne dein Datum nicht. Bitte versuche es noch einmal.";
 			repromptText =
 					"Ich weiss wirklich nicht was dein Datum ist.";
