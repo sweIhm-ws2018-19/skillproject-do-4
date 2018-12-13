@@ -2,8 +2,10 @@ package alibi.model;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.text.ParseException;
 
 public class AlibiTest {
@@ -38,7 +40,11 @@ public class AlibiTest {
 
     @Test
     public void testArrayCtorFail() {
-        assertThrows(ArrayIndexOutOfBoundsException.class, () -> new Alibi(new String[]{}));
+        assertThrows(
+                ArrayIndexOutOfBoundsException.class,
+                () -> new Alibi(new String[]{}),
+                "expected ArrayIndexOutOfBounds exception" +
+                        " for empty string");
     }
 
     @Test

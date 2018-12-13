@@ -55,7 +55,7 @@ public final class LocationProvider implements AlibiProvider {
         activities.add("hast einen Abstecher zu Stone Henge gemacht.");
         addToMap(activities, location);
         location = "Malmo";
-        activities.add("hast eine Saeule der Malmo Universität umarmt.");
+        activities.add("hast eine Saeule der Malmo Universitaet umarmt.");
         activities.add("warst im Turning Torso.");
         activities.add("bist über die Oresundbruecke nach"
                 + " Kopenhagen gefahren.");

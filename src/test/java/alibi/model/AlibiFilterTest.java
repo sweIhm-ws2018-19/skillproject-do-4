@@ -17,7 +17,7 @@ public class AlibiFilterTest {
     public static void setup() {
         ClassLoader classLoader = AlibiFilterTest.class.getClassLoader();
         File file = new File(classLoader.getResource("alibisource.csv").getFile());
-        assertTrue(file.exists());
+        assertTrue(file.exists(), "file alibisource.csv should exist, but does not");
         CSVProvider csvProvider = new CSVProvider(file.getAbsolutePath());
         defaultCollection = csvProvider.provideAlibi(null);
     }
@@ -40,19 +40,19 @@ public class AlibiFilterTest {
     public void testFilterAcceptEach() {
         AlibiFilter testFilter = new LambdaAlibiFilter((alibi) -> true);
         Collection<Alibi> filteredAlibis = testFilter.filter(defaultCollection);
-        assertEquals(3, filteredAlibis.size());
+        assertEquals(3, filteredAlibis.size(), "expected 3 alibis");
     }
 
     @Test
     public void testFilterDenyEach() {
         AlibiFilter testFilter = new LambdaAlibiFilter((alibi) -> false);
         Collection<Alibi> filteredAlibis = testFilter.filter(defaultCollection);
-        assertEquals(0, filteredAlibis.size());
+        assertEquals(0, filteredAlibis.size(), "expected 0 alibis");
     }
 
     @Test
     public void testFilterSpecificEnd() {
-        AlibiFilter testFilter =  new LambdaAlibiFilter((Alibi alibi) -> alibi.getEnd().equals("00.00 00.00.0020"));
+        AlibiFilter testFilter =  new LambdaAlibiFilter((Alibi alibi) -> alibi.getEnd().equals("01.00 01.01.2020"));
         Collection<Alibi> filteredAlibis = testFilter.filter(defaultCollection);
         assertEquals(1, filteredAlibis.size(),
                 "filtered alibis from alibisource.csv looling for \"00.00 00.00.0020\" as " +
