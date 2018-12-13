@@ -83,7 +83,7 @@ public class AlibiIntentHandler implements RequestHandler {
 
 			AlibiGenerator generator = new AlibiGenerator(date,date);
 
-			speechText = generator.generateAlibi(location);
+			speechText = generator.generateAlibi("Location: " + location);
 
 			repromptText = generator.generateAlibi(location);
 
