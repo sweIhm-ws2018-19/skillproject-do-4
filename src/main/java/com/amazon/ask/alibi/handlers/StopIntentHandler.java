@@ -20,7 +20,7 @@ public class StopIntentHandler implements RequestHandler {
 	@Override
 	public Optional<Response> handle(HandlerInput input) {
 		return input.getResponseBuilder()
-				.withSpeech("Auf Wiedersehen!")
+				.withSpeech("Auf Wiedersehen!"+ " Ich hoffe ich konnte dir helfen!")
 				.withSimpleCard("Alibi", "Auf Wiedersehen!")
 				.build();
 	}

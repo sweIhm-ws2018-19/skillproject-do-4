@@ -76,16 +76,18 @@ public class AlibiIntentHandler implements RequestHandler {
 
 			//String location = locSlot.getValue();
 			String location = getRandomLocation(locList);
+
 			//input.getAttributesManager().setSessionAttributes(Collections.singletonMap(LOC_KEY, location));
+			System.out.println(location);
 
 			// Alibi Generator works like this:
 			// String output = new AlibiGenerator(startTimeAsString, endTimeAsString).generateAlibi(otherCriteriaAsString);
 
 			AlibiGenerator generator = new AlibiGenerator(date,date);
 
-			speechText = generator.generateAlibi(location);
+			speechText = generator.generateAlibi("Location: " + location);
 
-			repromptText = generator.generateAlibi(location);
+			repromptText = generator.generateAlibi("Location: " + location);
 
 		} else {
 			// Render an error since we don't know what the specific date is.
