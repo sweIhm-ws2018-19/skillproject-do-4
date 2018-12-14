@@ -17,11 +17,8 @@ import java.util.*;
 import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.DATE_KEY;
 import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.DATE_SLOT;
 
-import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.LOC_KEY;
-import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.LOC_SLOT;
 
-
-public class AlibiIntentHandler implements RequestHandler {
+public class DateIntentHandler implements RequestHandler {
 
 	private static Random random = new Random();
 
@@ -37,7 +34,7 @@ public class AlibiIntentHandler implements RequestHandler {
 
 	@Override
 	public boolean canHandle(HandlerInput input) {
-		return input.matches(Predicates.intentName("erstelleAlibi"));
+		return input.matches(Predicates.intentName("DateIntent"));
 	}
 
 
