@@ -36,7 +36,7 @@ public class AlibiIntentHandlerTest {
 
     @Test
     public void testCanHandle() {
-        MockHandlerInputFactory.createCanHandleTest(new AlibiIntentHandler()).run();
+        MockHandlerInputFactory.createCanHandleTest(new WhatsMyAlibiIntentHandler()).run();
     }
 
     @Test
@@ -45,10 +45,10 @@ public class AlibiIntentHandlerTest {
         map.put(WhatsMyAlibiIntentHandler.DATE_KEY, null);
         HandlerInput input = createHandlerInput(map);
 
-        AlibiIntentHandler handler = new AlibiIntentHandler();
+        WhatsMyAlibiIntentHandler handler = new WhatsMyAlibiIntentHandler();
         Optional<Response> response = handler.handle(input);
         assertTrue(response.isPresent());
-        assertTrue(response.get().toString().contains("Ich kenne dein Datum nicht"));
+        assertTrue(response.get().toString().contains("Ich weiss nicht was dein Datum sein soll. Sag mir zuerst dein Datum"));
     }
 
     @Test
@@ -60,7 +60,7 @@ public class AlibiIntentHandlerTest {
         map.put(DATE_SLOT, mockSlot);
         HandlerInput input = createHandlerInput(map);
 
-        AlibiIntentHandler handler = new AlibiIntentHandler();
+        WhatsMyAlibiIntentHandler handler = new WhatsMyAlibiIntentHandler();
         Optional<Response> response = handler.handle(input);
         assertTrue(response.isPresent());
     }
