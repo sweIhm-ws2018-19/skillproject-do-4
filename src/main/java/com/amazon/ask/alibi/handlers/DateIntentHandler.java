@@ -20,18 +20,6 @@ import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.DATE_SLOT;
 
 public class DateIntentHandler implements RequestHandler {
 
-	private static Random random = new Random();
-
-	/*
-	returns a random location
-	 */
-	private static String getRandomLocation(List<String> locList){
-
-		int index = random.nextInt(locList.size());
-		return locList.get(index);
-	}
-
-
 	@Override
 	public boolean canHandle(HandlerInput input) {
 		return input.matches(Predicates.intentName("DateIntent"));
@@ -46,15 +34,6 @@ public class DateIntentHandler implements RequestHandler {
 		IntentRequest intentRequest = (IntentRequest) request;
 		Intent intent = intentRequest.getIntent();
 		Map<String, Slot> slots = intent.getSlots();
-		//Map<String ,Slot> slots2 = intent.getSlots();
-
-		//List of Locations
-		List<String> locList = new ArrayList<>();
-		locList.add("Muenchen");
-		locList.add("London");
-		locList.add("Malmo");
-		locList.add("Bruessel");
-
 
 		// Get the date slot from the list of slots.
 		Slot dateSlot = slots.get(DATE_SLOT);
@@ -69,18 +48,12 @@ public class DateIntentHandler implements RequestHandler {
 			String date = dateSlot.getValue();
 			input.getAttributesManager().setSessionAttributes(Collections.singletonMap(DATE_KEY, date));
 
-			//String location = locSlot.getValue();
-			String location = getRandomLocation(locList);
-
-			//input.getAttributesManager().setSessionAttributes(Collections.singletonMap(LOC_KEY, location));
-			System.out.println(location);
-
 			// Alibi Generator works like this:
 			// String output = new AlibiGenerator(startTimeAsString, endTimeAsString).generateAlibi(otherCriteriaAsString);
 
-			speechText = "Danke. Dein eigegebenes Datum ist " + date + "Sage jetzt bitte deinen Ort.";
+			speechText = "Danke. Dein eigegebenes Datum ist " + date + " Am besten sagst du mir jetzt wo du gerade bist.";
 
-			repromptText = "Danke. Dein eigegebenes Datum ist " + date + "Sage jetzt bitte deinen Ort.";
+			repromptText = "Sage jetzt bitte deinen Ort.";
 
 		} else {
 			// Render an error since we don't know what the specific date is.

@@ -35,10 +35,10 @@ public class LocationIntentHandler implements RequestHandler {
         // Check for location and create output to user.
         if (locSlot != null) {
             // Store the user's location in the Session and create response.
-            String date = locSlot.getValue();
-            input.getAttributesManager().setSessionAttributes(Collections.singletonMap(LOC_KEY, date));
-
             String location = locSlot.getValue();
+            input.getAttributesManager().setSessionAttributes(Collections.singletonMap(LOC_KEY, location));
+
+
             System.out.println(location);
 
             speechText = "Verstanden dein eingegebener Ort ist "+location;
