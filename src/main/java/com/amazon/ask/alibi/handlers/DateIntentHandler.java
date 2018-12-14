@@ -59,8 +59,6 @@ public class DateIntentHandler implements RequestHandler {
 		// Get the date slot from the list of slots.
 		Slot dateSlot = slots.get(DATE_SLOT);
 
-		// Get the loc slot from the list of slots.
-		//Slot locSlot = slots2.get(LOC_SLOT);
 
 		String speechText, repromptText;
 		boolean isAskResponse = false;
@@ -80,11 +78,9 @@ public class DateIntentHandler implements RequestHandler {
 			// Alibi Generator works like this:
 			// String output = new AlibiGenerator(startTimeAsString, endTimeAsString).generateAlibi(otherCriteriaAsString);
 
-			AlibiGenerator generator = new AlibiGenerator(date,date);
+			speechText = "Danke. Dein eigegebenes Datum ist " + date + "Sage jetzt bitte deinen Ort.";
 
-			speechText = generator.generateAlibi("Location: " + location);
-
-			repromptText = generator.generateAlibi("Location: " + location);
+			repromptText = "Danke. Dein eigegebenes Datum ist " + date + "Sage jetzt bitte deinen Ort.";
 
 		} else {
 			// Render an error since we don't know what the specific date is.

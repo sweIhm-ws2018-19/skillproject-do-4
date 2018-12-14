@@ -14,12 +14,13 @@ public class AlibiStreamHandler extends SkillStreamHandler {
 		return Skills.standard()
 				.addRequestHandlers(
 						new StopIntentHandler(),
-						new AlibiIntentHandler(),
+						new DateIntentHandler(),
 						new HelpIntentHandler(),
 						new LaunchRequestHandler(),
 						new SessionEndedRequestHandler(),
+						new LocationIntentHandler(),
 						new WhatsMyAlibiIntentHandler())
-				.withSkillId("amzn1.ask.skill.d7b12298-5855-4a63-b7c3-1f39c767052d")
+				.withSkillId("amzn1.ask.skill.0b6f254b-b6b8-49c0-a2ec-5585cfcb9c89")
 				.build();
 	}
 	
