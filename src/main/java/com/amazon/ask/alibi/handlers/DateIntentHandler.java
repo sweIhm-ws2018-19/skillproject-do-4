@@ -20,6 +20,9 @@ import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.DATE_SLOT;
 
 public class DateIntentHandler implements RequestHandler {
 
+
+	public static Slot dateSlot = null;
+
 	@Override
 	public boolean canHandle(HandlerInput input) {
 		return input.matches(Predicates.intentName("DateIntent"));
@@ -36,22 +39,21 @@ public class DateIntentHandler implements RequestHandler {
 		Map<String, Slot> slots = intent.getSlots();
 
 		// Get the date slot from the list of slots.
-		Slot dateSlot = slots.get(DATE_SLOT);
+		dateSlot = slots.get(DATE_SLOT);
 
 
-		String speechText, repromptText;
+		String speechText, repromptText, date;
 		boolean isAskResponse = false;
 
 		// Check for date and create output to user.
 		if (dateSlot != null) {
 			// Store the user's date in the Session and create response.
-			String date = dateSlot.getValue();
+			date = dateSlot.getValue();
 			input.getAttributesManager().setSessionAttributes(Collections.singletonMap(DATE_KEY, date));
 
-			// Alibi Generator works like this:
-			// String output = new AlibiGenerator(startTimeAsString, endTimeAsString).generateAlibi(otherCriteriaAsString);
 
-			speechText = "Danke. Dein eigegebenes Datum ist " + date + " Am besten sagst du mir jetzt wo du gerade bist.";
+
+			speechText = "Danke. Dein eingegebenes Datum ist " + date + ". Am besten sagst du mir jetzt wo du gerade bist.";
 
 			repromptText = "Sage jetzt bitte deinen Ort.";
 

@@ -1,5 +1,6 @@
 package com.amazon.ask.alibi.handlers;
 
+import alibi.model.AlibiGenerator;
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.*;
@@ -10,6 +11,8 @@ import java.util.*;
 
 import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.LOC_KEY;
 import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.LOC_SLOT;
+
+
 
 
 public class LocationIntentHandler implements RequestHandler {
@@ -39,11 +42,18 @@ public class LocationIntentHandler implements RequestHandler {
             input.getAttributesManager().setSessionAttributes(Collections.singletonMap(LOC_KEY, location));
 
 
-            System.out.println(location);
+            // Alibi Generator works like this:
+            // String output = new AlibiGenerator(startTimeAsString, endTimeAsString).generateAlibi(otherCriteriaAsString);
 
-            speechText = "Verstanden dein eingegebener Ort ist "+location;
+            String date = DateIntentHandler.dateSlot.getValue();
 
-            repromptText = "Verstanden dein eingegebener Ort ist "+location;
+            String output = new AlibiGenerator(date,date).generateAlibi(location);
+
+            speechText = "Verstanden dein eingegebener Ort ist "+location+". Das generierte Alibi lautet: "+output;
+
+
+
+            repromptText = "Verstanden dein eingegebener Ort ist "+location+". Das generierte Alibi lautet: "+output;
 
         } else {
             // Render an error since we don't know what the specific date is.
