@@ -33,7 +33,7 @@ public class SimpleHandlerTests {
                 new HelpIntentHandler(),
                 new FallbackIntentHandler(),
                 new CancelIntentHandler(),
-                new AlibiIntentHandler()
+                new WhatsMyAlibiIntentHandler()
 
         ).stream().map(Arguments::of);
     }
