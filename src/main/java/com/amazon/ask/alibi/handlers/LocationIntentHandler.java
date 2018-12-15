@@ -42,18 +42,15 @@ public class LocationIntentHandler implements RequestHandler {
             input.getAttributesManager().setSessionAttributes(Collections.singletonMap(LOC_KEY, location));
 
 
-            // Alibi Generator works like this:
-            // String output = new AlibiGenerator(startTimeAsString, endTimeAsString).generateAlibi(otherCriteriaAsString);
-
+            // get the date from the DateIntentHandler
             String date = DateIntentHandler.dateSlot.getValue();
 
-            String output = new AlibiGenerator(date,date).generateAlibi(location);
+            // generate an alibi out of date and location
+            String output = new AlibiGenerator(date,date).generateAlibi("Location: "+location);
 
-            speechText = "Verstanden dein eingegebener Ort ist "+location+". Das generierte Alibi lautet: "+output;
-
-
-
-            repromptText = "Verstanden dein eingegebener Ort ist "+location+". Das generierte Alibi lautet: "+output;
+            // Alexa output
+            speechText = "Verstanden dein eingegebener Ort ist "+location+" und dein Datum lautet: "+date+". Und somit lautet das Alibi: "+output;
+            repromptText = "Verstanden dein eingegebener Ort ist "+location+" und dein Datum lautet: "+date+". Und somit lautet das Alibi: "+output;
 
         } else {
             // Render an error since we don't know what the specific date is.
