@@ -7,6 +7,7 @@ import com.amazon.ask.model.*;
 import com.amazon.ask.request.Predicates;
 import com.amazon.ask.response.ResponseBuilder;
 
+import java.text.Normalizer;
 import java.util.*;
 
 import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.LOC_KEY;
@@ -16,6 +17,14 @@ import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.LOC_SLOT;
 
 
 public class LocationIntentHandler implements RequestHandler {
+
+    public static String RemoveDiacritics(String s) {
+
+        s = Normalizer.normalize(s, Normalizer.Form.NFD);
+        s = s.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+        return s;
+
+    }
 
     @Override
     public boolean canHandle(HandlerInput input) { return input.matches(Predicates.intentName("LocationIntent")); }
@@ -39,8 +48,11 @@ public class LocationIntentHandler implements RequestHandler {
         if (locSlot != null) {
             // Store the user's location in the Session and create response.
             String location = locSlot.getValue();
-            input.getAttributesManager().setSessionAttributes(Collections.singletonMap(LOC_KEY, location));
 
+            // change ü to ue
+            location = RemoveDiacritics(location);
+
+            input.getAttributesManager().setSessionAttributes(Collections.singletonMap(LOC_KEY, location));
 
             // get the date from the DateIntentHandler
             String date = DateIntentHandler.dateSlot.getValue();
