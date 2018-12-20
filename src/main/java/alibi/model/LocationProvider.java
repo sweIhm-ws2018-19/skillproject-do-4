@@ -27,7 +27,7 @@ public final class LocationProvider implements AlibiProvider {
     static {
         LOCATION_TO_ALIBI = new HashMap<>();
         final Collection<String> activities = new TreeSet<>();
-        String location = "Muenchen";
+        String location = "muenchen";
         activities.add("bist ganz oben auf dem Olympiaturm gewesen.");
         activities.add("warst im R-Bau der Hochschule Muenchen"
                 + " in der Lothstrasse.");
@@ -47,14 +47,14 @@ public final class LocationProvider implements AlibiProvider {
         activities.add("warst mit deiner Familie im Tierpark Hellabrunn.");
         activities.add("warst mit deiner Schwester im Schloss Nymphenburg.");
         addToMap(activities, location);
-        location = "London";
+        location = "london";
         activities.add("bist im London Eye gewesen.");
         activities.add("hast die Garde der Koenigin geaergert.");
         activities.add("hast die Tower Bridge begutachtet.");
         activities.add("hast Oxford besucht.");
         activities.add("hast einen Abstecher zu Stone Henge gemacht.");
         addToMap(activities, location);
-        location = "Malmo";
+        location = "malmo";
         activities.add("hast eine Saeule der Malmo Universitaet umarmt.");
         activities.add("warst im Turning Torso.");
         activities.add("bist über die Oresundbruecke nach"
@@ -65,7 +65,7 @@ public final class LocationProvider implements AlibiProvider {
         activities.add("hast dich von der Schokoladenfabrik"
                 + " begeistern lassen.");
         addToMap(activities, location);
-        location = "Bruessel";
+        location = "bruessel";
         activities.add("bist im Europapark auf einen T-Rex gestossen.");
         activities.add("hast den Sitz des EU-Rats betreten.");
         activities.add("bist auf das Atomium geklettert.");
