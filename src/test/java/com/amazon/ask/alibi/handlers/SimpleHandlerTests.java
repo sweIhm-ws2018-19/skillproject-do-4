@@ -26,25 +26,26 @@ public class SimpleHandlerTests {
 
     private static Stream<Arguments> createHandlers() {
         return Arrays.asList(
-                new WhatsMyAlibiIntentHandler(),
-                new StopIntentHandler(),
-                new SessionEndedRequestHandler(),
-                new LaunchRequestHandler(),
-                new HelpIntentHandler(),
-                new FallbackIntentHandler(),
                 new CancelIntentHandler(),
+                new DateIntentHandler(),
+                new FallbackIntentHandler(),
+                new HelpIntentHandler(),
+                new LaunchRequestHandler(),
+                new LocationIntentHandler(),
+                new SessionEndedRequestHandler(),
+                new StopIntentHandler(),
                 new WhatsMyAlibiIntentHandler()
-
         ).stream().map(Arguments::of);
     }
 
     private static Stream<Arguments> createHandlerPairs() {
         return Arrays.<Arguments>asList(
-                Arguments.of(new StopIntentHandler(), "Auf Wiedersehen!"),
-                Arguments.of(new LaunchRequestHandler(), "Willkommen bei deiner Pers"),
-                Arguments.of(new HelpIntentHandler(), "Ich erstelle dir ein Alibi. Gib Datum und Zeitpunkt an."),
+                Arguments.of(new CancelIntentHandler(), "Alibi Erstellung abgebrochen. Auf Wiedersehen!"),
                 Arguments.of(new FallbackIntentHandler(), "Tut mir leid, das wei"),
-                Arguments.of(new CancelIntentHandler(), "Alibi Erstellung abgebrochen. Auf Wiedersehen!")
+                Arguments.of(new HelpIntentHandler(), "Ich erstelle dir ein Alibi. Gib Datum und Zeitpunkt an."),
+                Arguments.of(new LaunchRequestHandler(), "Willkommen bei deiner Pers"),
+                Arguments.of(new SessionEndedRequestHandler(), ""),
+                Arguments.of(new StopIntentHandler(), "Auf Wiedersehen!")
         ).stream();
     }
 }
