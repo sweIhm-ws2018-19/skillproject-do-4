@@ -49,8 +49,8 @@ public class LocationIntentHandler implements RequestHandler {
             String output = new AlibiGenerator(date,date).generateAlibi("Location: "+location);
 
             // Alexa output
-            speechText = "Verstanden dein eingegebener Ort ist "+location+" und dein Datum lautet: "+date+". Und somit lautet das Alibi: "+output;
-            repromptText = "Verstanden dein eingegebener Ort ist "+location+" und dein Datum lautet: "+date+". Und somit lautet das Alibi: "+output;
+            speechText = "Verstanden. " + "Dein Alibi lautet: "+output;
+            repromptText = "Verstanden. " + "Dein Alibi lautet: "+output;
 
         } else {
             // Render an error since we don't know what the specific date is.
