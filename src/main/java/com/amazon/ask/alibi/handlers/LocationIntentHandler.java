@@ -21,7 +21,7 @@ public class LocationIntentHandler implements RequestHandler {
     public static String RemoveDiacritics(String s) {
 
         s = Normalizer.normalize(s, Normalizer.Form.NFD);
-        s = s.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+        s = s.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "e");
         return s;
 
     }
