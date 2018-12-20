@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class LocationIntentHandlertest {
+public class LocationIntentHandlerTest {
     private HandlerInput getMockHandlerInput(String location) {
         HandlerInput mockHandlerInput =
                 mock(HandlerInput.class);
