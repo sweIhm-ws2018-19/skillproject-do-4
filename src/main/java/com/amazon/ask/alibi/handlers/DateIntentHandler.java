@@ -26,7 +26,14 @@ public class DateIntentHandler implements RequestHandler {
 	}
 
 
-
+	/**
+	 * Saves the input date from the user into a Map.
+	 * The Date Value is then saved to a Slot Object.
+	 * Since the Slot Object is empty Alexa creates an response to the User.
+	 * Alexa asks the User in which specific Location he is.
+	 * @param input
+	 * @return Response Build
+	 */
 	@Override
 	public Optional<Response> handle(HandlerInput input) {
 

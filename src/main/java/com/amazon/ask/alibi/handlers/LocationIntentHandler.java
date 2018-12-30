@@ -18,6 +18,14 @@ import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.LOC_SLOT;
 
 public class LocationIntentHandler implements RequestHandler {
 
+
+    /**
+     * Since we don't want to have Diacritics in our Code we need to remove those from
+     * the Input given from the User.
+     *
+     * @param s String with Diacritics
+     * @return The Location without any Diacritics.
+     */
     public static String RemoveDiacritics(String s) {
 
         s = Normalizer.normalize(s, Normalizer.Form.NFD);
@@ -29,6 +37,14 @@ public class LocationIntentHandler implements RequestHandler {
     @Override
     public boolean canHandle(HandlerInput input) { return input.matches(Predicates.intentName("LocationIntent")); }
 
+    /**
+     * The Method takes the Location Input from the User and saves it to a Map.
+     * This Value will now transformed to a Slot.
+     * Since the Slot is empty Alexa creates a response.
+     * Otherwise it returns an Alibi in relation to the Location.
+     * @param input Location
+     * @return response Build
+     */
     @Override
     public Optional<Response> handle(HandlerInput input) {
         Request request = input.getRequestEnvelope().getRequest();
