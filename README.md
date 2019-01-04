@@ -15,6 +15,10 @@ Der Alexa-Skill "Alibi" verschafft seinem Nutzer auf Nachfrage ein personalisier
 
 ![](https://sonarcloud.io/api/project_badges/measure?project=alexa-skills-kit-samples%3Aalibi&metric=alert_status)
 
+## Coverage
+
+![](https://sonarcloud.io/api/project_badges/measure?project=alexa-skills-kit-samples%3Aalibi&metric=coverage)
+
 **_Einfache Funktionalität_**
 
 Als Nutzer gibt man Alexa ein Datum, eine Uhrzeit an. Alexa durchsucht im folgenden den eigenen Kalender nach einem Termin zu dem fraglichen Zeitpunkt, falls ein anderer Termin zu dem Zeitpunkt bereits stattfand.
