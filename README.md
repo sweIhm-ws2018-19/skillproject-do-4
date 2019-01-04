@@ -7,9 +7,13 @@ _"Alexa, gib mir ein Alibi."_
 
 Der Alexa-Skill "Alibi" verschafft seinem Nutzer auf Nachfrage ein personalisiertes, überzeugendes Alibi.
 
-# Travis CI status:
+## Travis CI status:
 
 ![](https://api.travis-ci.org/sweIhm-ws2018-19/skillproject-do-4.svg?branch=master)
+
+## Sonarqube status
+
+![](https://sonarcloud.io/api/project_badges/measure?project=alexa-skills-kit-samples%3Aalibi&metric=alert_status)
 
 **_Einfache Funktionalität_**
 
