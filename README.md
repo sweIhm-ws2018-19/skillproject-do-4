@@ -9,7 +9,7 @@ Der Alexa-Skill "Alibi" verschafft seinem Nutzer auf Nachfrage ein personalisier
 
 # Travis CI status:
 
-[!](https://api.travis-ci.org/sweIhm-ws2018-19/skillproject-do-4.svg?branch=master)
+![](https://api.travis-ci.org/sweIhm-ws2018-19/skillproject-do-4.svg?branch=master)
 
 **_Einfache Funktionalität_**
 
