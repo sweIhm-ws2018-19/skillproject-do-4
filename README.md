@@ -7,6 +7,10 @@ _"Alexa, gib mir ein Alibi."_
 
 Der Alexa-Skill "Alibi" verschafft seinem Nutzer auf Nachfrage ein personalisiertes, überzeugendes Alibi.
 
+# Travis CI status:
+
+[!](https://api.travis-ci.org/sweIhm-ws2018-19/skillproject-do-4.svg?branch=master)
+
 **_Einfache Funktionalität_**
 
 Als Nutzer gibt man Alexa ein Datum, eine Uhrzeit an. Alexa durchsucht im folgenden den eigenen Kalender nach einem Termin zu dem fraglichen Zeitpunkt, falls ein anderer Termin zu dem Zeitpunkt bereits stattfand.
