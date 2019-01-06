@@ -33,8 +33,7 @@ public class SimpleHandlerTests {
                 new LaunchRequestHandler(),
                 new LocationIntentHandler(),
                 new SessionEndedRequestHandler(),
-                new StopIntentHandler(),
-                new WhatsMyAlibiIntentHandler()
+                new StopIntentHandler()
         ).stream().map(Arguments::of);
     }
 

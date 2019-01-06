@@ -5,7 +5,6 @@ import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.model.*;
 import com.amazon.ask.response.ResponseBuilder;
 import org.junit.jupiter.api.Test;
-import org.w3c.dom.Attr;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +28,7 @@ public class DateIntentHandlerTest {
         if (date != null) {
             when(mockDateSlot.getValue()).thenReturn(date);
             Map<String, Slot> dummyMap = new HashMap<>();
-            dummyMap.put(WhatsMyAlibiIntentHandler.DATE_SLOT, mockDateSlot);
+            dummyMap.put(DateIntentHandler.DATE_SLOT, mockDateSlot);
             when(mockIntent.getSlots()).thenReturn(dummyMap);
         }
         when(mockHandlerInput.getResponseBuilder()).thenReturn(new ResponseBuilder());

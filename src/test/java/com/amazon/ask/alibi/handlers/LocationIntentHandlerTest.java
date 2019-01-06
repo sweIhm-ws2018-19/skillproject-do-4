@@ -29,7 +29,7 @@ public class LocationIntentHandlerTest {
         if (location != null) {
             when(mockLocationSlot.getValue()).thenReturn(location);
             Map<String, Slot> dummyMap = new HashMap<>();
-            dummyMap.put(WhatsMyAlibiIntentHandler.LOC_SLOT, mockLocationSlot);
+            dummyMap.put(LocationIntentHandler.LOC_SLOT, mockLocationSlot);
             when(mockIntent.getSlots()).thenReturn(dummyMap);
         }
         when(mockHandlerInput.getResponseBuilder()).thenReturn(new ResponseBuilder());
