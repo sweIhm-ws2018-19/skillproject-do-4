@@ -18,8 +18,7 @@ public class AlibiStreamHandler extends SkillStreamHandler {
 						new HelpIntentHandler(),
 						new LaunchRequestHandler(),
 						new SessionEndedRequestHandler(),
-						new LocationIntentHandler(),
-						new WhatsMyAlibiIntentHandler())
+						new LocationIntentHandler())
 				.withSkillId("amzn1.ask.skill.d7b12298-5855-4a63-b7c3-1f39c767052d")
 				.build();
 	}

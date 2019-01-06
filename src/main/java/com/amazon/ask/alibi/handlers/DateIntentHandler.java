@@ -11,11 +11,14 @@ import com.amazon.ask.response.ResponseBuilder;
 
 import java.util.*;
 
-import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.DATE_KEY;
-import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.DATE_SLOT;
+//import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.DATE_KEY;
+//import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.DATE_SLOT;
 
 
 public class DateIntentHandler implements RequestHandler {
+
+	public static final String DATE_KEY = "DATE";
+	public static final String DATE_SLOT = "Datum";
 
 
 	protected static Slot dateSlot = null;

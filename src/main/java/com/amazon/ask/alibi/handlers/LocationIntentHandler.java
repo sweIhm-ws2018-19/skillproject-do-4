@@ -10,13 +10,16 @@ import com.amazon.ask.response.ResponseBuilder;
 import java.text.Normalizer;
 import java.util.*;
 
-import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.LOC_KEY;
-import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.LOC_SLOT;
+//import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.LOC_KEY;
+//import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.LOC_SLOT;
 
 
 
 
 public class LocationIntentHandler implements RequestHandler {
+
+    public static final String LOC_KEY = "LOCATION";
+    public static final String LOC_SLOT = "Ort";
 
 
     /**
