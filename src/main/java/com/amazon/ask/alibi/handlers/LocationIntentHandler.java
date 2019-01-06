@@ -75,6 +75,8 @@ public class LocationIntentHandler implements RequestHandler {
 
             // generate an alibi out of date and location
             String output = new AlibiGenerator(date,date).generateAlibi("Location: "+location);
+            // Integrate here Location Provider
+            //
 
             // Alexa output
             speechText = "Verstanden. " + "Dein Alibi lautet: "+output;

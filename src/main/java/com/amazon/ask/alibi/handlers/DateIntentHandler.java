@@ -18,7 +18,7 @@ import static com.amazon.ask.alibi.handlers.WhatsMyAlibiIntentHandler.DATE_SLOT;
 public class DateIntentHandler implements RequestHandler {
 
 
-	public static Slot dateSlot = null;
+	protected static Slot dateSlot = null;
 
 	@Override
 	public boolean canHandle(HandlerInput input) {
