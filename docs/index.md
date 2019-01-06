@@ -14,7 +14,3 @@ Als Nutzer gibt man Alexa ein Datum, eine Uhrzeit an. Alexa durchsucht im folgen
 **_Personalisiert_**
 
 Da ein Alibi etwas persönliches darstellt, gib Alexa die zusätzliche Option, eine Zielgruppe, gegenüber wem muss das Alibi veräußert werden, anzugeben. Die Uhrzeit lässt sich als Zeitspannen oder Perioden angeben. Aktivitäten, die einem besonders liegen können ebenso angegeben werden, als Referenz. Falls man dann doch etwas generalisieren will, lässt sich ein Umfeld angeben, aus dem sich ein Aktivität ableiten lässt.
-
-**_Glaubwürdig_**
-
-Für den Fall, dass Alexa nicht fündig wird, wird ein passendes Event generiert und in den eigenen Kalender eingetragen. Dieses "Custom- Event" wird anschließend ausgegeben.
