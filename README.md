@@ -23,15 +23,13 @@ Gib einfach deinen derzeitigen Standort und das gewünschte Datum an und schon b
 
 ![](https://sonarcloud.io/api/project_badges/measure?project=alexa-skills-kit-samples%3Aalibi&metric=coverage)
 
-**_Einfache Funktionalität_**
+**_Derzeitige Funktionalitäten_**
 
-Als Nutzer gibt man Alexa ein Datum, eine Uhrzeit an. Alexa durchsucht im folgenden den eigenen Kalender nach einem Termin zu dem fraglichen Zeitpunkt, falls ein anderer Termin zu dem Zeitpunkt bereits stattfand.
+Der Nutzer kann folgende Parameter angeben: -> Standort, Datum
+Alexa filtert aus diesen Informationen ein passendes Alibi und gibt es dann aus.
 
-**_Personalisiert_**
+**_Funktionalitäten für zukünftige Sprints_**
 
-Da ein Alibi etwas persönliches darstellt, gib Alexa die zusätzliche Option, eine Zielgruppe, gegenüber wem muss das Alibi veräußert werden, anzugeben. Die Uhrzeit lässt sich als Zeitspannen oder Perioden angeben. Aktivitäten, die einem besonders liegen können ebenso angegeben werden, als Referenz. Falls man dann doch etwas generalisieren will, lässt sich ein Umfeld angeben, aus dem sich ein Aktivität ableiten lässt.
-
-**_Glaubwürdig_**
-
-Für den Fall, dass Alexa nicht fündig wird, wird ein passendes Event generiert und in den eigenen Kalender eingetragen. Dieses "Custom- Event" wird anschließend ausgegeben.
-
+Der Nutzer gibt bis zu 4 Parameter an -> Uhrzeit, Datum, Standort, Zielperson
+Alexa prüft nun deinen Kalender und generiert, sollte der Kalender leer sein, mit den gegebenen Parametern ein glaubwürdiges Alibi.
+Abschließend fügt Alexa diesen generierten Event nun in deinen Kalender ein um auch noch den letzten Zweifel von etwaigen Zeugen im Keim zu ersticken.
