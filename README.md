@@ -1,11 +1,15 @@
 ﻿# Alexa, ich brauche ein Alibi...
 
-Das allgemeine Problem, dass jede Person kennt; man hat einen Termin verpasst, eine frist wurde nicht eingehalten oder man hat schlichtweg vergessen einen Termin warzunehmen.
-Für Menschen die einen triftigen Grund hatten oder kreative Ausreden haben, fallen die Folgen meist glimpflich aus. Für andere, denen die eine Begründung fehlt und eine kreative Starthilfe brauchen, ist die Antwort eine Bitte entfernt.
+Jeder kennt es: man verpasst einen Termin oder eine Frist wurde nicht eingehalten. 
+Man bekommt schon wieder Ärger weil man den Müll nicht rausgebracht hat...
+Jetzt wird man zur Rede gestellt. Was sagt man?
 
-_"Alexa, gib mir ein Alibi."_
+Mit dem Alibi Skill für Alexa löst sich dieses Problem mit Leichtigkeit.
+Frage Alexa einfach nach einem Alibi und sofort erhälst du eine passende Ausrede.
 
-Der Alexa-Skill "Alibi" verschafft seinem Nutzer auf Nachfrage ein personalisiertes, überzeugendes Alibi.
+_"Alexa, starte Alibi."_
+
+Gib einfach deinen derzeitigen Standort und das gewünschte Datum an und schon bastelt Alexa dir deine Geschichte.
 
 ## Travis CI status:
 
