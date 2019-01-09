@@ -11,6 +11,11 @@ _"Alexa, starte Alibi."_
 
 Gib einfach deinen derzeitigen Standort und das gewünschte Datum an und schon bastelt Alexa dir deine Geschichte.
 
+![Näheres hier](https://github.com/sweIhm-ws2018-19/skillproject-do-4/edit/master/docs/index.md)
+
+
+# Log
+
 ## Travis CI status:
 
 ![](https://api.travis-ci.org/sweIhm-ws2018-19/skillproject-do-4.svg?branch=master)
