@@ -25,11 +25,13 @@ Gib einfach deinen derzeitigen Standort und das gewünschte Datum an und schon b
 
 **_Derzeitige Funktionalitäten_**
 
-Der Nutzer kann folgende Parameter angeben: -> Standort, Datum
+Der Nutzer kann folgende Parameter angeben: -> Standort, Datum.
+
 Alexa filtert aus diesen Informationen ein passendes Alibi und gibt es dann aus.
 
 **_Funktionalitäten für zukünftige Sprints_**
 
-Der Nutzer gibt bis zu 4 Parameter an -> Uhrzeit, Datum, Standort, Zielperson
+Der Nutzer gibt bis zu 4 Parameter an -> Uhrzeit, Datum, Standort, Zielperson.
+
 Alexa prüft nun deinen Kalender und generiert, sollte der Kalender leer sein, mit den gegebenen Parametern ein glaubwürdiges Alibi.
 Abschließend fügt Alexa diesen generierten Event nun in deinen Kalender ein um auch noch den letzten Zweifel von etwaigen Zeugen im Keim zu ersticken.
