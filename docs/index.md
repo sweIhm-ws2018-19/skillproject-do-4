@@ -17,4 +17,4 @@ Da ein Alibi etwas persönliches darstellt, gib Alexa die zusätzliche Option, e
 
 # Fachklassenmodell
 
-# 
+![](https://github.com/sweIhm-ws2018-19/skillproject-do-4/blob/master/Sprints/Sprint%202.png)
